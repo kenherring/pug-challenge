@@ -1,0 +1,13 @@
+{
+    "name": "pug-challenge",
+    "oeversion": "12.2",
+    "version": "2023.09.20",
+    "buildDirectory": "build",
+    "graphicalMode": false,
+    "dbConnections": [
+    ],
+    "buildPath": [
+        { "type": "source", "path": "src" }
+        // { "type": "propath", "path": "${DLC}/tty/OpenEdge.Core.pl", "documentation": "openedge.json" }
+    ]
+}

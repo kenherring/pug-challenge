@@ -1,0 +1,8 @@
+#!/bin/bash
+set -x
+
+if [[ !"$(which ant)" = *"$0" ]] && command ant -version; then
+  command ant "$@"
+else
+  wsl -d Ubuntu-22.04 ant "$@"
+fi

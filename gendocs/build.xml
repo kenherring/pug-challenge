@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<project name="gendocs">
+
+  <!-- https://github.com/Riverside-Software/cuddly-octo-ade -->
+  <taskdef resource="PCT.properties" />
+  <typedef resource="types.properties" />
+
+  <path id="propath">
+    <pathelement location="businesscomponents" />
+    <pathelement location="corelib" />
+    <pathelement location="netlib" />
+    <pathelement location="seclib" />
+    <pathelement location="." />
+  </path>
+
+  <target name="extract">
+
+    <copy todir="src/corelib">
+      <plfileset src="${DLC}/src/OpenEdge.Core.pl" includes="**/*.cls" />
+    </copy>
+    <copy todir="build/corelib">
+      <plfileset src="${DLC}/tty/OpenEdge.Core.pl" includes="**/*.r" />
+    <copy>
+  </target>
+
+  <PCTCompile destDir="build" dlcHome="${DLC}">
+    <fileset dir="businesscomponents" includes="**/*.cls" />
+    <fileset dir="corelib" includes="**/*.cls" />
+    <fileset dir="netlib" includes="**/*.cls" />
+    <fileset dir="seclib" includes="**/*.cls" />
+    <fileset dir="." includes="OpenEdge/DataAdmin/**/*.cls" />
+  </PCTCompile>
+
+  <JsonDocumentation buildDir="build" destFile="business.json" dlcHome="${DLC}" encoding="iso-8859-1" indent="true">
+    <fileset dir="businesscomponents" includes="**/*.cls" />
+    <DBConnection refid="mydb" />
+    <propath refid="pp" />
+  </JsonDocumentation>
+  <JsonDocumentation buildDir="build" destFile="corelib.json" dlcHome="${DLC}" encoding="iso-8859-1" indent="true">
+    <fileset dir="corelib" includes="**/*.cls" />
+    <DBConnection refid="mydb" />
+    <propath refid="pp" />
+  </JsonDocumentation>
+  <JsonDocumentation buildDir="build" destFile="netlib.json" dlcHome="${DLC}" encoding="iso-8859-1" indent="true">
+    <fileset dir="netlib" includes="**/*.cls" />
+    <DBConnection refid="mydb" />
+    <propath refid="pp" />
+  </JsonDocumentation>
+  <JsonDocumentation buildDir="build" destFile="seclib.json" dlcHome="${DLC}" encoding="iso-8859-1" indent="true">
+    <fileset dir="seclib" includes="**/*.cls" />
+    <DBConnection refid="mydb" />
+    <propath refid="pp" />
+  </JsonDocumentation>
+  <JsonDocumentation buildDir="build" destFile="dataAdmin.json" dlcHome="${DLC}" encoding="iso-8859-1" indent="true">
+    <fileset dir="." includes="OpenEdge/DataAdmin/**/*.cls" />
+    <DBConnection refid="mydb" />
+    <propath refid="pp" />
+  </JsonDocumentation>
+
+</project>
