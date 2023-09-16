@@ -1,0 +1,13 @@
+{
+  "define variable <varname>": {
+    "prefix": [ "define variable", "define private variable" ],
+    "body": "define variable ${1:varname} as ${2|character,integer,decimal,datetime,datetime-tz,recid,rowid|} no-undo.",
+    "description": "define a variables"
+  },
+  "define property <propname>": {
+    "prefix": [ "define property", "define private property", "define protected property", "define public property" ],
+    "body": "define ${1|private,protected,public|} property ${2:propname} as ${3|character,integer,decimal,datetime,datetime-tz,recid,rowid|} no-undo.",
+    "description": "Defines a property of a class, declares a property prototype in an ABL interface, or overrides an abstract property inherited from an ABL or .NET abstract super class. A property is a named member of a class that allows you to read or write a value using the same syntax as a data member. However, a property can define special methods (accessors) that specify if and how the property can be read or written. The following description begins with the syntax for defining a property that you can both read and write.",
+    "scope": "source.abl"
+  }
+}

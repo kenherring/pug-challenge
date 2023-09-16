@@ -1,22 +1,63 @@
 {
-    // See https://go.microsoft.com/fwlink/?LinkId=733558
-    // for the documentation about the tasks.json format
-    "version": "2.0.0",
-
-    "tasks": [
-        {   "label": "Run OE Tests",
-            "type": "shell",
-            "args": [
-                "-Dfile=${relativeFile}",
-            ],
-            "group": {
-              "kind": "test",
-              "isDefault": true
-            },
-            "presentation": {
-                "reveal": "always"
-            },
-            "problemMatcher": []
-        }
-    ]
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    { "label": "Welcome",
+      "type": "shell",
+      "command": ".vscode/scripts/setup.sh",
+      "args": [],
+      "presentation": {
+        "clear": true,
+        "echo": false,
+        "reveal": "always",
+        "showReuseMessage": false
+      },
+      "problemMatcher": [],
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
+    },
+    { "label": "RUN OE Tests for current file",
+      "type": "shell",
+      "command": "ant",
+      "args": [
+        "test",
+        "-Dfile=${relativeFile}"
+      ],
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Launch DataDigger",
+      "type": "process",
+      "command": "process",
+      "args": [
+        "c:/Progress/OpenEdge/prowin.exe",
+        "-basekey",
+        "INI",
+        "-p",
+        ".DataDigger/DataDigger.p",
+        "-pf",
+        "schema.pf",
+        "-param",
+        "Sports 2000 (schema)"
+      ],
+      // "presentation": {
+      //   "echo": true,
+      //   "reveal": "always",
+      //   "focus": false,
+      //   "panel": "shared",
+      //   "showReuseMessage": true,
+      //   "clear": false
+      // },
+      "problemMatcher": []
+    }
+  ]
 }

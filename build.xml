@@ -1,0 +1,40 @@
+<project name="Pug Challenge EU 2023" default="compile">
+  <property environment="env" />
+  <taskdef resource="PCT.properties" classpath="${user.home}/.ant/lib/PCT.jar" />
+  <typedef resource="types.properties" />
+  <DlcHome value="${env.DLC}" />
+
+  <echo>${env.DLC}</echo>
+  <path id="propath">
+    <pathelement path="src" />
+    <pathelement path="test" />
+    <pathelement location="${env.DLC}/tty/OpenEdge.Core.pl" />
+  </path>
+
+  <target name="create-dbs">
+    <mkdir dir="sp2k" />
+    <PCTCreateBase dbName="db" destDir="target/db/sp2k" schemaFile="schema.df"/>
+  </target>
+
+  <target name="compile">
+    <echo message="Hello World"/> 
+    <PCTCompile destDir="build">
+      <fileset dir="src" includes="**/*.cls,**/*.p" />
+      <fileset dir="test" includes="**/*.cls,**/*.p" />
+      <propath refid="propath" />
+    </PCTCompile>
+  </target>
+
+  <target name="test" depends="compile">
+    <mkdir dir="target" />
+    <ABLUnit writeLog="true" destDir="target" haltOnFailure="true">
+      <fileset dir="test" includes="**/*.p,**/*.cls" />
+      <propath refid="propath" />
+    </ABLUnit>
+  </target>
+
+  <target name="deploy">
+    <!-- TODO -->
+  </target>
+
+</project>

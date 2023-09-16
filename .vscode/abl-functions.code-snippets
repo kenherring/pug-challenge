@@ -1,0 +1,36 @@
+{
+  "ENTRY": {
+    "prefix": [ "entry(element,list[,delim])", "entry(element,list)", "entry(element,list,delim)" ],
+    "body": [
+      "entry(${1:expr},${2:list}${3:,${4:delim}})",
+    ],
+    "description": "Returns a character string (CHARACTER or LONGCHAR) entry from a list based on an integer position. The data type of the returned value matches the data type of the list element.",
+    "scope": "abl"
+  },
+  "INDEX": {
+    "prefix": [ "index(element,list[,delim])", "index(element,list)", "index(element,list,delim)" ],
+    "body": [
+      "index(${1:expr},${2:list}${3:,${4:delim}})",
+    ],
+    "description": "",
+    "scope": "abl"
+  },
+  "LOOKUP": {
+    "prefix": [ "lookup(expr,list[,delim])", "lookup(expr,list)", "lookup(expr,list,delim)" ],
+    "body": [
+      "lookup(${1:expr},${2:list}${3:,${4:delim}})"
+    ],
+    "description": "LOOKUP function:\nReturns an INTEGER value giving the position of an expression in a list. Returns a 0 if the expression is not in the list.",
+    "scope": "abl"
+  },
+  "PROCEDURE": {
+    "prefix": [ "procedure <proc-name> :", "procedure <proc-name> PRIVATE:" ],
+    "body": [
+      "procedure ${1:proc-name}${2: private} :",
+      "  ${0:procedure-body}",
+      "end procedure."
+    ],
+    "description": "Defines an internal procedure as an ABL procedure or declares an internal procedure prototype for an external routine in a Windows dynamic link library (DLL) or UNIX shared library, or for an internal ABL procedure defined in an external procedure that is itself a super procedure of the declaration procedure. The following syntax boxes describe the syntax for each use of the statement, beginning with an internal procedure definition.",
+    "scope": "abl"
+  }
+}

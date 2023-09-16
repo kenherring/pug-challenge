@@ -4,10 +4,11 @@
     "version": "2023.09.20",
     "buildDirectory": "build",
     "graphicalMode": false,
-    "dbConnections": [
-    ],
+    "dbConnections": [],
     "buildPath": [
-        { "type": "source", "path": "src" }
-        // { "type": "propath", "path": "${DLC}/tty/OpenEdge.Core.pl", "documentation": "openedge.json" }
+        { "type": "source", "path": "src", "includes": "**/*.cls,**/*.p" },
+        { "type": "source", "path": "test", "includes": "**/*.cls,**/*.p" },
+        { "type": "propath", "path": "build" },
+        { "type": "propath", "path": "${DLC}/tty/OpenEdge.Core.pl", "documentation": "gendocs/corelib.json" }
     ]
 }

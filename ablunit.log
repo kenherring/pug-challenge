@@ -1,0 +1,144 @@
+[23/09/16@00:00:53.959-0400] P-027476 T-015868 1 4GL -- Logging level set to = 2
+[23/09/16@00:00:53.959-0400] P-027476 T-015868 1 4GL -- No entry types are activated
+[23/09/16@00:00:53.959-0400] P-027476 T-015868 1 4GL APPL           Unable to build type info for C:\git\pug-challenge\test\cache\MaintenanceTest.cls: Constructor name 'Maintenance' must match final component of class name 'cache.MaintenanceTest'. (12985)
+[23/09/16@00:00:53.959-0400] P-027476 T-015868 1 4GL APPL           BuildTypeInfo OpenEdge.ABLUnit.Runner.ABLRunner at line 182  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:00:53.959-0400] P-027476 T-015868 1 4GL APPL           populateTestModelForTestClass OpenEdge.ABLUnit.Runner.ABLRunner at line 403  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:00:53.959-0400] P-027476 T-015868 1 4GL APPL           populateTestModelForTestCase OpenEdge.ABLUnit.Runner.ABLRunner at line 733  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:00:53.959-0400] P-027476 T-015868 1 4GL APPL           populateTestModel OpenEdge.ABLUnit.Runner.ABLRunner at line 779  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:00:53.959-0400] P-027476 T-015868 1 4GL APPL           populateTestModel OpenEdge.ABLUnit.Runner.ABLRunner at line 741  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:00:53.959-0400] P-027476 T-015868 1 4GL APPL           RunTests OpenEdge.ABLUnit.Runner.ABLRunner at line 143  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:00:53.959-0400] P-027476 T-015868 1 4GL APPL           ABLUnitCore.p at line 79  (ABLUnitCore.r)
+[23/09/16@00:00:53.959-0400] P-027476 T-015868 1 4GL APPL           C:\Users\kenne\AppData\Local\Temp\pctinit211539952.p at line 28  (C:\Users\kenne\AppData\Local\Temp\pctinit211539952.p)
+[23/09/16@00:00:53.959-0400] P-027476 T-015868 1 4GL ----------     Log file closed at user's request
+[23/09/16@00:02:14.520-0400] P-012096 T-026420 1 4GL -- Logging level set to = 2
+[23/09/16@00:02:14.520-0400] P-012096 T-026420 1 4GL -- No entry types are activated
+[23/09/16@00:02:14.520-0400] P-012096 T-026420 1 4GL APPL           Unable to build type info for C:\git\pug-challenge\test\cache\MaintenanceTest.cls: Constructor name 'Maintenance' must match final component of class name 'cache.MaintenanceTest'. (12985)
+[23/09/16@00:02:14.520-0400] P-012096 T-026420 1 4GL APPL           BuildTypeInfo OpenEdge.ABLUnit.Runner.ABLRunner at line 182  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:02:14.520-0400] P-012096 T-026420 1 4GL APPL           populateTestModelForTestClass OpenEdge.ABLUnit.Runner.ABLRunner at line 403  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:02:14.520-0400] P-012096 T-026420 1 4GL APPL           populateTestModelForTestCase OpenEdge.ABLUnit.Runner.ABLRunner at line 733  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:02:14.520-0400] P-012096 T-026420 1 4GL APPL           populateTestModel OpenEdge.ABLUnit.Runner.ABLRunner at line 779  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:02:14.520-0400] P-012096 T-026420 1 4GL APPL           populateTestModel OpenEdge.ABLUnit.Runner.ABLRunner at line 741  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:02:14.520-0400] P-012096 T-026420 1 4GL APPL           RunTests OpenEdge.ABLUnit.Runner.ABLRunner at line 143  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:02:14.520-0400] P-012096 T-026420 1 4GL APPL           ABLUnitCore.p at line 79  (ABLUnitCore.r)
+[23/09/16@00:02:14.520-0400] P-012096 T-026420 1 4GL APPL           C:\Users\kenne\AppData\Local\Temp\pctinit71325822.p at line 28  (C:\Users\kenne\AppData\Local\Temp\pctinit71325822.p)
+[23/09/16@00:02:14.520-0400] P-012096 T-026420 1 4GL ----------     Log file closed at user's request
+[23/09/16@00:03:11.676-0400] P-024416 T-001128 1 4GL -- Logging level set to = 2
+[23/09/16@00:03:11.676-0400] P-024416 T-001128 1 4GL -- No entry types are activated
+[23/09/16@00:03:11.676-0400] P-024416 T-001128 1 4GL APPL           Unable to build type info for C:\git\pug-challenge\test\cache\MaintenanceTest.cls: ** Unable to understand after -- "constructor". (247)
+[23/09/16@00:03:11.676-0400] P-024416 T-001128 1 4GL APPL           BuildTypeInfo OpenEdge.ABLUnit.Runner.ABLRunner at line 182  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:03:11.676-0400] P-024416 T-001128 1 4GL APPL           populateTestModelForTestClass OpenEdge.ABLUnit.Runner.ABLRunner at line 403  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:03:11.676-0400] P-024416 T-001128 1 4GL APPL           populateTestModelForTestCase OpenEdge.ABLUnit.Runner.ABLRunner at line 733  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:03:11.676-0400] P-024416 T-001128 1 4GL APPL           populateTestModel OpenEdge.ABLUnit.Runner.ABLRunner at line 779  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:03:11.676-0400] P-024416 T-001128 1 4GL APPL           populateTestModel OpenEdge.ABLUnit.Runner.ABLRunner at line 741  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:03:11.676-0400] P-024416 T-001128 1 4GL APPL           RunTests OpenEdge.ABLUnit.Runner.ABLRunner at line 143  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:03:11.676-0400] P-024416 T-001128 1 4GL APPL           ABLUnitCore.p at line 79  (ABLUnitCore.r)
+[23/09/16@00:03:11.676-0400] P-024416 T-001128 1 4GL APPL           C:\Users\kenne\AppData\Local\Temp\pctinit117565857.p at line 28  (C:\Users\kenne\AppData\Local\Temp\pctinit117565857.p)
+[23/09/16@00:03:11.676-0400] P-024416 T-001128 1 4GL ----------     Log file closed at user's request
+[23/09/16@00:03:49.231-0400] P-027024 T-022996 1 4GL -- Logging level set to = 2
+[23/09/16@00:03:49.231-0400] P-027024 T-022996 1 4GL -- No entry types are activated
+[23/09/16@00:03:49.231-0400] P-027024 T-022996 1 4GL APPL           Unable to build type info for C:\git\pug-challenge\test\cache\MaintenanceTest.cls: ** Unable to understand after -- "constructor". (247)
+[23/09/16@00:03:49.231-0400] P-027024 T-022996 1 4GL APPL           BuildTypeInfo OpenEdge.ABLUnit.Runner.ABLRunner at line 182  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:03:49.231-0400] P-027024 T-022996 1 4GL APPL           populateTestModelForTestClass OpenEdge.ABLUnit.Runner.ABLRunner at line 403  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:03:49.231-0400] P-027024 T-022996 1 4GL APPL           populateTestModelForTestCase OpenEdge.ABLUnit.Runner.ABLRunner at line 733  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:03:49.231-0400] P-027024 T-022996 1 4GL APPL           populateTestModel OpenEdge.ABLUnit.Runner.ABLRunner at line 779  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:03:49.231-0400] P-027024 T-022996 1 4GL APPL           populateTestModel OpenEdge.ABLUnit.Runner.ABLRunner at line 741  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:03:49.231-0400] P-027024 T-022996 1 4GL APPL           RunTests OpenEdge.ABLUnit.Runner.ABLRunner at line 143  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:03:49.231-0400] P-027024 T-022996 1 4GL APPL           ABLUnitCore.p at line 79  (ABLUnitCore.r)
+[23/09/16@00:03:49.231-0400] P-027024 T-022996 1 4GL APPL           C:\Users\kenne\AppData\Local\Temp\pctinit169716885.p at line 28  (C:\Users\kenne\AppData\Local\Temp\pctinit169716885.p)
+[23/09/16@00:03:49.231-0400] P-027024 T-022996 1 4GL ----------     Log file closed at user's request
+[23/09/16@00:04:04.019-0400] P-027504 T-022596 1 4GL -- Logging level set to = 2
+[23/09/16@00:04:04.019-0400] P-027504 T-022596 1 4GL -- No entry types are activated
+[23/09/16@00:04:04.019-0400] P-027504 T-022596 1 4GL APPL           Unable to build type info for C:\git\pug-challenge\test\cache\MaintenanceTest.cls: Constructor name 'Maintenance' must match final component of class name 'cache.MaintenanceTest'. (12985)
+[23/09/16@00:04:04.019-0400] P-027504 T-022596 1 4GL APPL           BuildTypeInfo OpenEdge.ABLUnit.Runner.ABLRunner at line 182  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:04:04.019-0400] P-027504 T-022596 1 4GL APPL           populateTestModelForTestClass OpenEdge.ABLUnit.Runner.ABLRunner at line 403  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:04:04.019-0400] P-027504 T-022596 1 4GL APPL           populateTestModelForTestCase OpenEdge.ABLUnit.Runner.ABLRunner at line 733  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:04:04.019-0400] P-027504 T-022596 1 4GL APPL           populateTestModel OpenEdge.ABLUnit.Runner.ABLRunner at line 779  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:04:04.019-0400] P-027504 T-022596 1 4GL APPL           populateTestModel OpenEdge.ABLUnit.Runner.ABLRunner at line 741  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:04:04.019-0400] P-027504 T-022596 1 4GL APPL           RunTests OpenEdge.ABLUnit.Runner.ABLRunner at line 143  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:04:04.019-0400] P-027504 T-022596 1 4GL APPL           ABLUnitCore.p at line 79  (ABLUnitCore.r)
+[23/09/16@00:04:04.019-0400] P-027504 T-022596 1 4GL APPL           C:\Users\kenne\AppData\Local\Temp\pctinit94223001.p at line 28  (C:\Users\kenne\AppData\Local\Temp\pctinit94223001.p)
+[23/09/16@00:04:04.019-0400] P-027504 T-022596 1 4GL ----------     Log file closed at user's request
+[23/09/16@00:05:14.788-0400] P-025892 T-020344 1 4GL -- Logging level set to = 2
+[23/09/16@00:05:14.788-0400] P-025892 T-020344 1 4GL -- No entry types are activated
+[23/09/16@00:05:14.788-0400] P-025892 T-020344 1 4GL APPL           Unable to build type info for C:\git\pug-challenge\test\cache\MaintenanceTest.cls: Constructor name 'Maintenance' must match final component of class name 'cache.MaintenanceTest'. (12985)
+[23/09/16@00:05:14.788-0400] P-025892 T-020344 1 4GL APPL           BuildTypeInfo OpenEdge.ABLUnit.Runner.ABLRunner at line 182  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:05:14.788-0400] P-025892 T-020344 1 4GL APPL           populateTestModelForTestClass OpenEdge.ABLUnit.Runner.ABLRunner at line 403  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:05:14.788-0400] P-025892 T-020344 1 4GL APPL           populateTestModelForTestCase OpenEdge.ABLUnit.Runner.ABLRunner at line 733  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:05:14.788-0400] P-025892 T-020344 1 4GL APPL           populateTestModel OpenEdge.ABLUnit.Runner.ABLRunner at line 779  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:05:14.788-0400] P-025892 T-020344 1 4GL APPL           populateTestModel OpenEdge.ABLUnit.Runner.ABLRunner at line 741  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:05:14.788-0400] P-025892 T-020344 1 4GL APPL           RunTests OpenEdge.ABLUnit.Runner.ABLRunner at line 143  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:05:14.788-0400] P-025892 T-020344 1 4GL APPL           ABLUnitCore.p at line 79  (ABLUnitCore.r)
+[23/09/16@00:05:14.788-0400] P-025892 T-020344 1 4GL APPL           C:\Users\kenne\AppData\Local\Temp\pctinit102179364.p at line 28  (C:\Users\kenne\AppData\Local\Temp\pctinit102179364.p)
+[23/09/16@00:05:14.788-0400] P-025892 T-020344 1 4GL ----------     Log file closed at user's request
+[23/09/16@00:05:41.251-0400] P-011532 T-006064 1 4GL -- Logging level set to = 2
+[23/09/16@00:05:41.251-0400] P-011532 T-006064 1 4GL -- No entry types are activated
+[23/09/16@00:05:41.251-0400] P-011532 T-006064 1 4GL APPL           Unable to build type info for C:\git\pug-challenge\test\cache\MaintenanceTest.cls: cache.MaintenanceTest cannot inherit from itself. (12917)
+[23/09/16@00:05:41.251-0400] P-011532 T-006064 1 4GL APPL           BuildTypeInfo OpenEdge.ABLUnit.Runner.ABLRunner at line 182  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:05:41.251-0400] P-011532 T-006064 1 4GL APPL           populateTestModelForTestClass OpenEdge.ABLUnit.Runner.ABLRunner at line 403  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:05:41.251-0400] P-011532 T-006064 1 4GL APPL           populateTestModelForTestCase OpenEdge.ABLUnit.Runner.ABLRunner at line 733  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:05:41.251-0400] P-011532 T-006064 1 4GL APPL           populateTestModel OpenEdge.ABLUnit.Runner.ABLRunner at line 779  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:05:41.251-0400] P-011532 T-006064 1 4GL APPL           populateTestModel OpenEdge.ABLUnit.Runner.ABLRunner at line 741  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:05:41.251-0400] P-011532 T-006064 1 4GL APPL           RunTests OpenEdge.ABLUnit.Runner.ABLRunner at line 143  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:05:41.251-0400] P-011532 T-006064 1 4GL APPL           ABLUnitCore.p at line 79  (ABLUnitCore.r)
+[23/09/16@00:05:41.251-0400] P-011532 T-006064 1 4GL APPL           C:\Users\kenne\AppData\Local\Temp\pctinit132498171.p at line 28  (C:\Users\kenne\AppData\Local\Temp\pctinit132498171.p)
+[23/09/16@00:05:41.251-0400] P-011532 T-006064 1 4GL ----------     Log file closed at user's request
+[23/09/16@00:05:51.476-0400] P-005620 T-026128 1 4GL -- Logging level set to = 2
+[23/09/16@00:05:51.476-0400] P-005620 T-026128 1 4GL -- No entry types are activated
+[23/09/16@00:05:51.476-0400] P-005620 T-026128 1 4GL APPL           Unable to build type info for C:\git\pug-challenge\test\cache\MaintenanceTest.cls: ** Unable to understand after -- ".Core.Assert". (247)
+[23/09/16@00:05:51.476-0400] P-005620 T-026128 1 4GL APPL           BuildTypeInfo OpenEdge.ABLUnit.Runner.ABLRunner at line 182  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:05:51.476-0400] P-005620 T-026128 1 4GL APPL           populateTestModelForTestClass OpenEdge.ABLUnit.Runner.ABLRunner at line 403  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:05:51.476-0400] P-005620 T-026128 1 4GL APPL           populateTestModelForTestCase OpenEdge.ABLUnit.Runner.ABLRunner at line 733  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:05:51.476-0400] P-005620 T-026128 1 4GL APPL           populateTestModel OpenEdge.ABLUnit.Runner.ABLRunner at line 779  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:05:51.476-0400] P-005620 T-026128 1 4GL APPL           populateTestModel OpenEdge.ABLUnit.Runner.ABLRunner at line 741  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:05:51.476-0400] P-005620 T-026128 1 4GL APPL           RunTests OpenEdge.ABLUnit.Runner.ABLRunner at line 143  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:05:51.476-0400] P-005620 T-026128 1 4GL APPL           ABLUnitCore.p at line 79  (ABLUnitCore.r)
+[23/09/16@00:05:51.476-0400] P-005620 T-026128 1 4GL APPL           C:\Users\kenne\AppData\Local\Temp\pctinit127404777.p at line 28  (C:\Users\kenne\AppData\Local\Temp\pctinit127404777.p)
+[23/09/16@00:05:51.476-0400] P-005620 T-026128 1 4GL ----------     Log file closed at user's request
+[23/09/16@00:06:21.619-0400] P-020668 T-022564 1 4GL -- Logging level set to = 2
+[23/09/16@00:06:21.619-0400] P-020668 T-022564 1 4GL -- No entry types are activated
+[23/09/16@00:06:21.619-0400] P-020668 T-022564 1 4GL APPL           Unable to build type info for C:\git\pug-challenge\test\cache\MaintenanceTest.cls: ** Unable to understand after -- ".Core.Assert". (247)
+[23/09/16@00:06:21.619-0400] P-020668 T-022564 1 4GL APPL           BuildTypeInfo OpenEdge.ABLUnit.Runner.ABLRunner at line 182  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:06:21.619-0400] P-020668 T-022564 1 4GL APPL           populateTestModelForTestClass OpenEdge.ABLUnit.Runner.ABLRunner at line 403  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:06:21.619-0400] P-020668 T-022564 1 4GL APPL           populateTestModelForTestCase OpenEdge.ABLUnit.Runner.ABLRunner at line 733  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:06:21.619-0400] P-020668 T-022564 1 4GL APPL           populateTestModel OpenEdge.ABLUnit.Runner.ABLRunner at line 779  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:06:21.619-0400] P-020668 T-022564 1 4GL APPL           populateTestModel OpenEdge.ABLUnit.Runner.ABLRunner at line 741  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:06:21.619-0400] P-020668 T-022564 1 4GL APPL           RunTests OpenEdge.ABLUnit.Runner.ABLRunner at line 143  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:06:21.619-0400] P-020668 T-022564 1 4GL APPL           ABLUnitCore.p at line 79  (ABLUnitCore.r)
+[23/09/16@00:06:21.619-0400] P-020668 T-022564 1 4GL APPL           C:\Users\kenne\AppData\Local\Temp\pctinit110044695.p at line 29  (C:\Users\kenne\AppData\Local\Temp\pctinit110044695.p)
+[23/09/16@00:06:21.619-0400] P-020668 T-022564 1 4GL ----------     Log file closed at user's request
+[23/09/16@00:15:46.724-0400] P-022096 T-024916 1 4GL -- Logging level set to = 2
+[23/09/16@00:15:46.724-0400] P-022096 T-024916 1 4GL -- No entry types are activated
+[23/09/16@00:15:46.724-0400] P-022096 T-024916 1 4GL APPL           Unable to build type info for C:\git\pug-challenge\test\cache\MaintenanceTest.cls: ** Unable to understand after -- ".Core.Assert". (247)
+[23/09/16@00:15:46.724-0400] P-022096 T-024916 1 4GL APPL           BuildTypeInfo OpenEdge.ABLUnit.Runner.ABLRunner at line 182  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:15:46.724-0400] P-022096 T-024916 1 4GL APPL           populateTestModelForTestClass OpenEdge.ABLUnit.Runner.ABLRunner at line 403  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:15:46.724-0400] P-022096 T-024916 1 4GL APPL           populateTestModelForTestCase OpenEdge.ABLUnit.Runner.ABLRunner at line 733  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:15:46.724-0400] P-022096 T-024916 1 4GL APPL           populateTestModel OpenEdge.ABLUnit.Runner.ABLRunner at line 779  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:15:46.724-0400] P-022096 T-024916 1 4GL APPL           populateTestModel OpenEdge.ABLUnit.Runner.ABLRunner at line 741  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:15:46.724-0400] P-022096 T-024916 1 4GL APPL           RunTests OpenEdge.ABLUnit.Runner.ABLRunner at line 143  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:15:46.724-0400] P-022096 T-024916 1 4GL APPL           ABLUnitCore.p at line 79  (ABLUnitCore.r)
+[23/09/16@00:15:46.724-0400] P-022096 T-024916 1 4GL APPL           C:\Users\kenne\AppData\Local\Temp\pctinit154410999.p at line 29  (C:\Users\kenne\AppData\Local\Temp\pctinit154410999.p)
+[23/09/16@00:15:46.724-0400] P-022096 T-024916 1 4GL ----------     Log file closed at user's request
+[23/09/16@00:16:13.647-0400] P-027300 T-028628 1 4GL -- Logging level set to = 2
+[23/09/16@00:16:13.647-0400] P-027300 T-028628 1 4GL -- No entry types are activated
+[23/09/16@00:16:13.647-0400] P-027300 T-028628 1 4GL APPL           Unable to build type info for C:\git\pug-challenge\test\cache\MaintenanceTest.cls: ** Unable to understand after -- ".Core.Assert". (247)
+[23/09/16@00:16:13.647-0400] P-027300 T-028628 1 4GL APPL           BuildTypeInfo OpenEdge.ABLUnit.Runner.ABLRunner at line 182  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:16:13.647-0400] P-027300 T-028628 1 4GL APPL           populateTestModelForTestClass OpenEdge.ABLUnit.Runner.ABLRunner at line 403  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:16:13.647-0400] P-027300 T-028628 1 4GL APPL           populateTestModelForTestCase OpenEdge.ABLUnit.Runner.ABLRunner at line 733  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:16:13.647-0400] P-027300 T-028628 1 4GL APPL           populateTestModel OpenEdge.ABLUnit.Runner.ABLRunner at line 779  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:16:13.647-0400] P-027300 T-028628 1 4GL APPL           populateTestModel OpenEdge.ABLUnit.Runner.ABLRunner at line 741  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:16:13.647-0400] P-027300 T-028628 1 4GL APPL           RunTests OpenEdge.ABLUnit.Runner.ABLRunner at line 143  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:16:13.647-0400] P-027300 T-028628 1 4GL APPL           ABLUnitCore.p at line 79  (ABLUnitCore.r)
+[23/09/16@00:16:13.647-0400] P-027300 T-028628 1 4GL APPL           C:\Users\kenne\AppData\Local\Temp\pctinit109388336.p at line 29  (C:\Users\kenne\AppData\Local\Temp\pctinit109388336.p)
+[23/09/16@00:16:13.647-0400] P-027300 T-028628 1 4GL ----------     Log file closed at user's request
+[23/09/16@00:16:27.195-0400] P-002972 T-011208 1 4GL -- Logging level set to = 2
+[23/09/16@00:16:27.195-0400] P-002972 T-011208 1 4GL -- No entry types are activated
+[23/09/16@00:16:27.195-0400] P-002972 T-011208 1 4GL APPL           Unable to build type info for C:\git\pug-challenge\test\cache\MaintenanceTest.cls: ** Unable to understand after -- "Assert". (247)
+[23/09/16@00:16:27.195-0400] P-002972 T-011208 1 4GL APPL           BuildTypeInfo OpenEdge.ABLUnit.Runner.ABLRunner at line 182  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:16:27.195-0400] P-002972 T-011208 1 4GL APPL           populateTestModelForTestClass OpenEdge.ABLUnit.Runner.ABLRunner at line 403  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:16:27.195-0400] P-002972 T-011208 1 4GL APPL           populateTestModelForTestCase OpenEdge.ABLUnit.Runner.ABLRunner at line 733  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:16:27.195-0400] P-002972 T-011208 1 4GL APPL           populateTestModel OpenEdge.ABLUnit.Runner.ABLRunner at line 779  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:16:27.195-0400] P-002972 T-011208 1 4GL APPL           populateTestModel OpenEdge.ABLUnit.Runner.ABLRunner at line 741  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:16:27.195-0400] P-002972 T-011208 1 4GL APPL           RunTests OpenEdge.ABLUnit.Runner.ABLRunner at line 143  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+[23/09/16@00:16:27.195-0400] P-002972 T-011208 1 4GL APPL           ABLUnitCore.p at line 79  (ABLUnitCore.r)
+[23/09/16@00:16:27.195-0400] P-002972 T-011208 1 4GL APPL           C:\Users\kenne\AppData\Local\Temp\pctinit176681364.p at line 29  (C:\Users\kenne\AppData\Local\Temp\pctinit176681364.p)
+[23/09/16@00:16:27.195-0400] P-002972 T-011208 1 4GL ----------     Log file closed at user's request

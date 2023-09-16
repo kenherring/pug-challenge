@@ -1,0 +1,7 @@
+services:
+  oedb:
+    build:
+      context: .
+      dockerfile: .docker/Dockerfile
+    image: oedb
+    entrypoint: .docker/entrypoint.sh

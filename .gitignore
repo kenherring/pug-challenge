@@ -1,3 +1,5 @@
 .builder/
 build/
+gendocs/
+!gendocs/build.xml
 target/

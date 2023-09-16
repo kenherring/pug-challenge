@@ -4,10 +4,22 @@
 
 	// List of extensions which should be recommended for users of this workspace.
 	"recommendations": [
-		
+    "circleci.circleci",
+    "EditorConfig.EditorConfig",
+    "GitHub.copilot",
+    "ms-azuretools.vscode-docker",
+    "ms-vscode-remote.remote-wsl",
+    "RiversideSoftware.openedge-abl-lsp",
+    "timonwong.shellcheck",
 	],
+
 	// List of extensions recommended by VS Code that should not be recommended for users of this workspace.
 	"unwantedRecommendations": [
-		
+		"donjayamanne.githistory",
+    "GoogleCloudTools.cloudcode",
+    "eamodio.gitlens",
+    "felipecaputo.git-project-manager",
+    "ms-kubernetes-tools.vscode-kubernetes-tools",
+    "ms-kubernetes-tools.vscode-kubernetes-tools",
 	]
 }

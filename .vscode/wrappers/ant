@@ -1,7 +1,8 @@
 #!/bin/bash
-set -x
+set -eou pipefail
 
-if [[ !"$(which ant)" = *"$0" ]] && command ant -version; then
+ANT_EXEC=$(which ant)
+if [[ ! "$ANT_EXEC" = *"$0" ]] && command ant -version; then
   command ant "$@"
 else
   wsl -d Ubuntu-22.04 ant "$@"

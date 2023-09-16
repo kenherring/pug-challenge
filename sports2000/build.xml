@@ -1,0 +1,16 @@
+<project default="create-sports2000" basedir="..">
+
+  <property name="DLC" value="C:/Progress/OpenEdge" />
+  <echo>${user.home}</echo>
+  <taskdef resource="PCT.properties" classpath="${user.home}/.ant/lib/PCT.jar" />
+  <DlcHome value="C:/Progress/OpenEdge" />
+
+  <target name="create-sports2000">
+    <mkdir dir="target/db/sports2000" />
+    <sports2000 dbName="sp2k" destDir="target/db/sports2000" dlcHome="${DLC}" />
+    <PCTDumpSchema destFile="schema.df">
+      <DBConnection dbName="target/db/sports2000/sp2k" singleUser="true" />
+    </PCTDumpSchema>
+  </target>
+
+</project>

@@ -1,5 +1,14 @@
 {
+  "editor.suggest.filterGraceful": true,
+  "editor.wordBasedSuggestions": false,
+  "terminal.integrated.enablePersistentSessions": false,
+  "terminal.integrated.env.linux": {
+    "DLC": "/psc/dlc"
+  },
   "terminal.integrated.env.windows": {
-    "PATH": "$PATH:.vscode/wrappers"
+    "DLC": "C:/Progress/OpenEdge",
+    // "PATH": "$PATH:.vscode/wrappers:C:/Progress/OpenEdge/bin/ant"
+    // "PATH": "$PATH:/c/Progress/OpenEdge/bin:/c/Progress/OpenEdge/ant/bin"
+    "PATH": "$PATH:%DLC%/bin:%DLC%/ant/bin"
   }
 }

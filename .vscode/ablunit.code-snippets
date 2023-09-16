@@ -1,0 +1,79 @@
+// in file 'Code/User/snippets/javascript.json'
+{
+  "@Test2": {
+    "prefix": ["for", "for-const"],
+    "body": ["for (const ${2:element} of ${1:array}) {", "\t$0", "}"],
+    "description": "A for loop.",
+    "scope": "abl"
+  },
+  "@Test": {
+    "prefix": "@Test. method public void testMethod()",
+    "body": [
+      "@Test."
+      "method public void testMethod () :"
+      "  Assert::equals (expected, actual)."
+      "end method."
+    ]
+    "description": "Identifies that a method or a procedure is a test method or procedure.",
+  },
+  "@Test (exepcted=\"ExceptionType\"": {
+    "prefix": "@Test (exepcted=\"ExceptionType\"). method public void testMethod()",
+    "body": [
+      "@Test (exepcted=\"ExceptionType\")."
+      "method public void testMethod () :"
+      "  some.namespace.class:MethodName("args"). //Throws ExceptionType"
+      "end method."
+    ],
+    "description": "(expected="ExceptionType")	Fails the method if the method does not throw the exception mentioned in the expected attribute.",
+  },
+  "@Setup": {
+    "prefix": "@Setup. method public void doSetup()",
+    "body": [
+      "@Setup."
+      "method public void setupMethod () :"
+      "  //before each test."
+      "end method."
+    ],
+    "description": "Executes the method or procedure before each test. This annotation prepares the test environment such as reading input data or initializing the class.",
+    "scope": "abl"
+  },
+  "@TearDown": {
+    "prefix": "@TearDown. method public void doTearDown()",
+    "body": [
+      "@TearDown."
+      "method public void tearDownMethod () :"
+      "  //after each test."
+      "end method."
+    ],
+    "description": "Executes the method or procedure after each test. This annotation cleans up the test environment such as deleting temporary data or restoring defaults.",
+    "scope": "abl"
+  },
+  "@Before": {
+    "prefix": "@Before. method public void doBefore()",
+    "body": [
+      "@Before."
+      "method public void beforeMethod () :"
+      "  //before all tests (once per class)"
+      "end method."
+    ],
+    "description": "Executes the method or procedure once per class, before the start of all tests. This annotation can be used to perform time-sensitive activities such as connecting to a database.",
+    "scope": "abl"
+  },
+  "@After": {
+    "prefix": "@After. method public void doAfter()",
+    "body": [
+      "@After."
+      "method public void afterMethod () :"
+      "  //after all tests (once per class)"
+      "end method."
+    ],
+    "description": "Executes the method or procedure once, after all the tests are executed. This annotation is used to perform clean-up activities such as disconnecting from a database.",
+    "scope": "abl"
+  },
+  "@Ignore": {
+    "prefix": "@Ignore.",
+    "description": "Ignores the test. You can use this annotation when you are still working on a code, the test case is not ready to run, or if the execution time of test is too long to be included.",,
+    "scope": "abl"
+  },
+
+}
