@@ -1,0 +1,3 @@
+[submodule ".DataDigger"]
+	path = .DataDigger
+	url = https://github.com/patrickTingen/DataDigger
