@@ -36,5 +36,5 @@ workflows:
     jobs:
       - say-hello
       - compile-and-test
-      - sonar-scan
+      - sonar-scan:
           context: SonarCloud
