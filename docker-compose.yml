@@ -2,7 +2,7 @@ version: "3.2"
 
 services:
   oedb:
-    image: oedb:latest
+    image: kherring/oedb:latest
     container_name: oedb
     environment:
       - DB_CREATE_METHOD=none

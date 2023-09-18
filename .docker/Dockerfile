@@ -28,7 +28,7 @@ COPY schema schema
 COPY build.xml build.xml
 COPY .docker/db_test.p db_test.p
 COPY .docker/deploy/scripts/ /deploy/scripts/
-COPY progress.cfg /psc/dlc/progress.cfg
+# COPY progress.cfg /psc/dlc/progress.cfg
 
 ARG PROGRESS_CFG
 # RUN echo "PROGRESS_CFG='$PROGRESS_CFG'"

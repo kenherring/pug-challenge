@@ -1,5 +1,8 @@
 version: 2.1
 
+orbs:
+  sonarcloud: sonarsource/sonarcloud@2.0.0
+
 jobs:
   say-hello:
     docker:
@@ -9,8 +12,29 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
-
+  # build-container:
+  compile-and-test:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - run: ant compile
+      - run: ant test
+      - persist_to_workspace:
+          root: .
+          paths: [ '.' ]
+  sonar-scan:
+    docker:
+      - image: sonarsource/sonarcloud@2.0.0
+    steps:
+      - attach_workspace:
+          at: .
+      - sonarcloud/scan
+  
 workflows:
   say-hello-workflow:
     jobs:
       - say-hello
+      - compile-and-test
+      - sonar-scan
+          context: SonarCloud
