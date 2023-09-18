@@ -37,4 +37,5 @@ workflows:
       - say-hello
       - compile-and-test
       - sonar-scan:
+          requires: [ compile-and-test ]
           context: SonarCloud
