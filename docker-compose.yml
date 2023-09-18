@@ -1,7 +1,30 @@
+version: "3.2"
+
 services:
   oedb:
-    build:
-      context: .
-      dockerfile: .docker/Dockerfile
-    image: oedb
-    entrypoint: .docker/entrypoint.sh
+    image: oedb:latest
+    container_name: oedb
+    environment:
+      - DB_CREATE_METHOD=none
+      - DB_DIR=sp2k
+      - DB_NAME=sp2k
+      - DB_BROKER_PORT=2500
+      - DB_MINPORT=2600
+      - DB_MAXPORT=2610
+    network_mode: host
+    # networks:
+    #   - host_pug
+    # ports:
+    #   - '0.0.0.0:2500:2500'
+    secrets:
+      - PROGRESS_CFG
+
+secrets:
+  PROGRESS_CFG:
+    file: c:/Progress/OpenEdge/progress.cfg
+
+# networks:
+#   host_pug:
+#     driver: bridge
+#     # driver: host
+#     enable_ipv6: false

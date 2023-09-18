@@ -1,35 +1,70 @@
 <project name="Pug Challenge EU 2023" default="compile">
   <property environment="env" />
-  <taskdef resource="PCT.properties" classpath="${user.home}/.ant/lib/PCT.jar" />
-  <typedef resource="types.properties" />
+  <taskdef resource="PCT.properties" classpath="${user.home}/.ant/lib/PCT.jar;/usr/share/ant/lib/PCT.jar" />
+  <typedef resource="types.properties" classpath="${user.home}/.ant/lib/PCT.jar;/usr/share/ant/lib/PCT.jar" />
   <DlcHome value="${env.DLC}" />
+  <echo>DLC=${env.DLC}</echo>
 
-  <echo>${env.DLC}</echo>
   <path id="propath">
     <pathelement path="src" />
     <pathelement path="test" />
     <pathelement location="${env.DLC}/tty/OpenEdge.Core.pl" />
   </path>
 
-  <target name="create-dbs">
-    <mkdir dir="sp2k" />
-    <PCTCreateBase dbName="db" destDir="target/db/sp2k" schemaFile="schema.df"/>
+  <path id="propath-ablunit">
+    <pathelement path="build" />
+  </path>
+
+  <property name="DB_DIR" value="target/db/sp2k" />
+  <property name="tempDir" value="target/temp" />
+
+  <target name="create-db">
+    <mkdir dir="${DB_DIR}" />
+    <mkdir dir="${tempDir}" />
+    <echo>DB_DIR=${DB_DIR}</echo>
+    <echo>baseDir=${baseDir}</echo>
+    <echo>tempDir=${tempDir}</echo>
+    <PCTCreateBase dbName="sp2k" destDir="${DB_DIR}" schemaFile="schema/schema.df" structFile="schema/schema.st" tempDir="${tempDir}" />
+
+    <exec executable="chmod">
+      <arg value="-R" />
+      <arg value="777" />
+      <arg value="${DB_DIR}" />
+    </exec>
+
+    <exec executable="_proutil" 
+          failonerror="true">
+      <arg value="${DB_DIR}/sp2k.db" />
+      <arg value="-C" />
+      <arg value="truncate" />
+      <arg value="bi" />
+    </exec>
   </target>
 
   <target name="compile">
     <echo message="Hello World"/> 
-    <PCTCompile destDir="build">
+    <PCTCompile destDir="build" keepXref="true" xmlXref="true" forceCompile="true">
       <fileset dir="src" includes="**/*.cls,**/*.p" />
       <fileset dir="test" includes="**/*.cls,**/*.p" />
       <propath refid="propath" />
     </PCTCompile>
   </target>
 
-  <target name="test" depends="compile">
+  <target name="test" depends="test-all,test-file" />
+
+  <target name="test-all" depends="compile" unless="file">
     <mkdir dir="target" />
     <ABLUnit writeLog="true" destDir="target" haltOnFailure="true">
       <fileset dir="test" includes="**/*.p,**/*.cls" />
       <propath refid="propath" />
+    </ABLUnit>
+  </target>
+
+    <target name="test-file" depends="compile" if="file">
+    <mkdir dir="target" />
+    <ABLUnit writeLog="true" destDir="target" haltOnFailure="true">
+      <fileset dir="test" includes="**/*.p,**/*.cls" />
+      <propath refid="propath-ablunit" />
     </ABLUnit>
   </target>
 

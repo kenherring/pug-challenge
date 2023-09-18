@@ -3,7 +3,8 @@
   // for the documentation about the tasks.json format
   "version": "2.0.0",
   "tasks": [
-    { "label": "Welcome",
+    { "label": "Welcome/Startup",
+      "hide": true,
       "type": "shell",
       "command": ".vscode/scripts/setup.sh",
       "args": [],
@@ -18,8 +19,32 @@
         "runOn": "folderOpen"
       }
     },
-    { "label": "RUN OE Tests for current file",
+    { "label": "Run ABLUnit for active file",
       "type": "shell",
+      "command": "ant",
+      "icon": {
+        "id": "beaker",
+        "color": "terminal.ansiCyan"
+      },
+      "args": [
+        "test",
+        "-Dfile=${relativeFile}"
+      ],
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always"
+      },
+      "problemMatcher": []
+    },
+    { "label": "Run ABLUnit for all files",
+      "type": "shell",
+      "icon": {
+        "id": "beaker",
+        "color": "terminal.ansiCyan"
+      },
       "command": "ant",
       "args": [
         "test",
@@ -35,19 +60,56 @@
       "problemMatcher": []
     },
     {
-      "label": "Launch DataDigger",
+      "label": "Launch DataDigger (read only schema)",
       "type": "process",
-      "command": "process",
+      "icon": {
+        "id": "database",
+        "color": "terminal.ansiGreen"
+      },
+      "command": "prowin",
       "args": [
-        "c:/Progress/OpenEdge/prowin.exe",
         "-basekey",
         "INI",
+        "-s",
+        "512",
+        "-rereadnolock",
         "-p",
         ".DataDigger/DataDigger.p",
         "-pf",
-        "schema.pf",
+        "schema/schema.pf",
         "-param",
-        "Sports 2000 (schema)"
+        "'sports2000 (schema db)'"
+      ],
+      // "presentation": {
+      //   "echo": true,
+      //   "reveal": "always",
+      //   "focus": false,
+      //   "panel": "shared",
+      //   "showReuseMessage": true,
+      //   "clear": false
+      // },
+      "problemMatcher": []
+    },
+    {
+      "label": "Launch DataDigger (docker)",
+      "type": "process",
+      "icon": {
+        "id": "database",
+        "color": "terminal.ansiGreen"
+      },
+      "command": "prowin",
+      "args": [
+        "-basekey",
+        "INI",
+        "-s",
+        "512",
+        "-rereadnolock",
+        "-p",
+        ".DataDigger/DataDigger.p",
+        "-pf",
+        "schema/schema-docker.pf",
+        "-param",
+        "'sports2000 (schema db)'"
       ],
       // "presentation": {
       //   "echo": true,

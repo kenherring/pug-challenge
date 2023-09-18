@@ -1,9 +1,0 @@
-#!/bin/bash
-set -eou pipefail
-
-ANT_EXEC=$(which ant)
-if [[ ! "$ANT_EXEC" = *"$0" ]] && command ant -version; then
-  command ant "$@"
-else
-  wsl -d Ubuntu-22.04 ant "$@"
-fi

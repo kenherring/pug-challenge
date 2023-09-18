@@ -1,14 +1,27 @@
 {
+  "abl.buildMode": 1,
+  "files.exclude": {
+    ".DataDigger": true,
+  },
   "editor.suggest.filterGraceful": true,
   "editor.wordBasedSuggestions": false,
+  "explorer.copyRelativePathSeparator": "/",
+  "git.ignoreSubmodules": true,
+  "git.repositoryScanIgnoredFolders": [
+    ".DataDigger"
+  ],
+  "git.ignoredRepositories": [
+    ".DataDigger"
+  ],
+  "shellcheck.customArgs": [ "-x"],
   "terminal.integrated.enablePersistentSessions": false,
   "terminal.integrated.env.linux": {
     "DLC": "/psc/dlc"
   },
   "terminal.integrated.env.windows": {
     "DLC": "C:/Progress/OpenEdge",
-    // "PATH": "$PATH:.vscode/wrappers:C:/Progress/OpenEdge/bin/ant"
-    // "PATH": "$PATH:/c/Progress/OpenEdge/bin:/c/Progress/OpenEdge/ant/bin"
-    "PATH": "$PATH:%DLC%/bin:%DLC%/ant/bin"
-  }
+    "ANT_HOME": "${env:DLC}/ant",
+    "PATH": "${env:PATH}:${env:DLC}/ant/bin"
+  },
+  "task.autoDetect": "off"
 }
