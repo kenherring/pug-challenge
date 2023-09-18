@@ -18,7 +18,11 @@ jobs:
       - image: kherring/oedb:latest
     steps:
       - checkout
-      - run: ant compile
+      - run:
+          name: ant compile
+          command: |
+            .circleci/hex2bin.sh <<< "$PROGRESS_CFG_HEX" > "$DLC/progress.cfg"
+            ant compile
       - run: ant test
       - persist_to_workspace:
           root: .
@@ -30,7 +34,6 @@ jobs:
       - attach_workspace:
           at: .
       - sonarcloud/scan
-  
 workflows:
   say-hello-workflow:
     jobs:
