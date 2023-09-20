@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>ken.herring.pug.challenge</groupId>
+  <artifactId>pug-challenge</artifactId>
+  <version>2023.09.21</version>
+
+  <name>PUG Challenge VSCode</name>
+  <description>PUG Challenge VSCode</description>
+  <url>https://github.com/kenherring/pug-challenge</url>
+  <inceptionYear>2023</inceptionYear>
+  <organization>
+    <name>PUG</name>
+    <url>https://github.com/kenherring/pug-challenge</url>
+  </organization>
+  <licenses>
+    <license>
+      <name>LGPL 3.0</name>
+    </license>
+  </licenses>
+
+  <issueManagement>
+    <system>GitHub</system>
+    <url>https://github.com/kenherring/pug-challenge/issues</url>
+  </issueManagement>
+
+  <developers>
+    <developer>
+      <id>kherring</id>
+      <name>Ken Herring</name>
+    </developer>
+  </developers>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
+  </properties>
+
+</project>

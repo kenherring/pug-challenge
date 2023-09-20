@@ -1,5 +1,7 @@
 .builder/
 .docker/deploy/scripts/scripts/
+.scannerwork/
+.sonarlint/
 build/
 gendocs/
 !gendocs/build.xml
@@ -8,7 +10,9 @@ target/
 
 .vscode/profile.json
 progress.cfg
+progress*.cfg
 
 ~*
 *.e
+*.hex
 *.log

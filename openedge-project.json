@@ -3,7 +3,7 @@
     "charset": "iso8859-1",
     "oeversion": "12.2",
     "version": "12.2",
-    "buildDirectory": "build",
+    "buildDirectory": "target/rcode",
     "graphicalMode": false,
     "extraParameters": "-T target/temp",
     "numThreads": 1,
@@ -11,7 +11,7 @@
     "buildPath": [
         { "type": "source", "path": "src", "includes": "**/*.cls,**/*.p" },
         { "type": "source", "path": "test", "includes": "**/*.cls,**/*.p" },
-        { "type": "propath", "path": "build" },
+        { "type": "propath", "path": "target/rcode" },
         { "type": "propath", "path": "${DLC}/tty/OpenEdge.Core.pl", "documentation": "gendocs/corelib.json" }
     ],
     "procedures": [
@@ -22,9 +22,14 @@
         "name": "schema dbs (./target/db/)", 
         "inherits": "default",
         "value": {
-          "connect": "-db target/db/sp2k/sp2k.db -RO", 
-          "aliases": [ "sports2000" ], 
-          "dumpFile": "schema/schema.df" 
+          "dbConnections": [
+            {
+              "name": "sp2k",
+              "connect": "-db target/db/sp2k/sp2k.db -RO",
+              "aliases": [ "sports2000" ],
+              "dumpFile": "schema/schema.df"
+            }
+          ]
         }
       },
       {
@@ -32,7 +37,11 @@
         "inherits": "default",
         "value": {
           "dbConnections": [
-            { "name": "sp2k", "connect": "-db target/db/sp2k/sp2k.db -S localhost -P 8510", "aliases": [ "sports2000" ], "dumpFile": "schema/schema.df" }
+            {
+              "name": "sp2k",
+              "connect": "-db target/db/sp2k/sp2k.db -S localhost -P 8510",
+              "aliases": [ "sports2000" ],
+              "dumpFile": "schema/schema.df" }
           ]
         }
       },
