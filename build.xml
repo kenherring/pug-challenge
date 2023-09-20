@@ -6,8 +6,8 @@
   <echo>DLC=${env.DLC}</echo>
 
   <path id="propath">
-    <pathelement path="src" />
-    <pathelement path="test" />
+    <pathelement path="src/main" />
+    <pathelement path="src/test" />
     <pathelement location="${env.DLC}/tty/OpenEdge.Core.pl" />
   </path>
 
@@ -44,9 +44,10 @@
   <target name="compile">
     <echo message="Hello World"/> 
     <PCTCompile destDir="build" keepXref="true" xmlXref="true" forceCompile="true">
-      <fileset dir="src" includes="**/*.cls,**/*.p" />
-      <fileset dir="test" includes="**/*.cls,**/*.p" />
+      <fileset dir="src/main" includes="**/*.cls,**/*.p" />
+      <fileset dir="src/test" includes="**/*.cls,**/*.p" />
       <propath refid="propath" />
+      <DBConnection dbName="sp2k" dbDir="target/db/sp2k" readOnly="true" />
     </PCTCompile>
   </target>
 

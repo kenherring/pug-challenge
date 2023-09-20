@@ -14,8 +14,10 @@ TBD
 
 ### Sonar Scan
 
+This will scan locally if you are running a docker container at https://localhost:9000.
+
 ```bash
-mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=admin2
+mvn sonar:sonar
 ```
 
 ## Other Repo Information
@@ -38,8 +40,6 @@ mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=admin2
   * https://hub.docker.com/r/progresssoftware/prgs-oedb
   * https://hub.docker.com/r/progresssoftware/prgs-pasoe
   * https://docs.progress.com/bundle/pas-for-openedge-docker-containers-122/page/Learn-about-PAS-for-OpenEdge-in-a-Docker-container.html
-
-  
 
 ## About Me
 

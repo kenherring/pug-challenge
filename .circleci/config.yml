@@ -21,6 +21,8 @@ jobs:
       - run:
           name: ant compile
           command: |
+            set -x
+            mkdir -p secrets
             .circleci/hex2bin.sh \<<< "$(tr ' ' '\n' \<<< "$PROGRESS_CFG_HEX")" > secrets/progress.cfg
             ant compile
       - run: ant test
