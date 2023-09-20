@@ -38,8 +38,9 @@
     <maven.compiler.target>19</maven.compiler.target>
 
     <!-- This is the name and version displayed in the SonarCloud UI. -->
-    <sonar.projectName>pug-challenge</sonar.projectName>
-    <sonar.organization>kenherring</sonar.organization>
+    <sonar.projectKey>ken.herring.pug.challenge:pug-challenge</sonar.projectKey>
+    <!-- <sonar.projectName>pug-challenge</sonar.projectName> -->
+    <!-- <sonar.organization>kenherring</sonar.organization> -->
     <sonar.projectVersion>2023.09.21</sonar.projectVersion>
 
     <!-- sonar.host.url=http://localhost:9000 -->
