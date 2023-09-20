@@ -21,7 +21,9 @@ jobs:
       - run:
           name: ant compile
           command: |
-            .circleci/hex2bin.sh \<<< "$(tr ' ' '\n' \<<< "$PROGRESS_CFG_HEX")" > secrets/progress.cfg
+            set -x
+            .circleci/hex2bin.sh \<<< "$(tr ' ' '\n' \<<< "$PROGRESS_CFG_HEX")" > /psc/dlc/progress.cfg
+            
             ant compile
       - run: ant test
       - persist_to_workspace:

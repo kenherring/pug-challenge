@@ -28,6 +28,7 @@ COPY schema schema
 COPY build.xml build.xml
 COPY .docker/db_test.p db_test.p
 COPY .docker/deploy/scripts/ /deploy/scripts/
+COPY .docker/temp/ablunit.pl /psc/dlc/tty/ablunit.pl
 # COPY progress.cfg /psc/dlc/progress.cfg
 
 ARG PROGRESS_CFG
