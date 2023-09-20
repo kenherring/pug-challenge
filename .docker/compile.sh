@@ -11,10 +11,9 @@ if [ -f /run/secrets/PROGRESS_CFG ]; then
   cp /run/secrets/PROGRESS_CFG "$DLC/progress.cfg"
 fi
 
-cat "$DLC/progress.cfg"
-
 ## compile the code
-
+pwd #TODO: remove me
+cd project
 if [ "${OS:-}" = "Windows_NT" ]; then
   DB_DIR=target/db/sp2k
 else

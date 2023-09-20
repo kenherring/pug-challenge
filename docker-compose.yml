@@ -14,8 +14,8 @@ services:
       - PROGRESS_CFG_HEX=${PROGRESS_CFG_HEX}
     network_mode: host
     volumes:
-      - ./:/home/pscadmin/
-    entrypoint: .docker/compile.sh
+      - ./:/home/pscadmin/project
+    entrypoint: project/.docker/compile.sh
     secrets:
       - PROGRESS_CFG
     profiles:

@@ -15,7 +15,7 @@
     <pathelement path="build" />
   </path>
 
-  <condition property="DB_DIR" value="target/db-unix/sp2k" else="target/db/sp2k" >
+  <condition property="DB_DIR" value="/psc/wrk/sp2k" else="target/db/sp2k" >
     <os family="unix" />
   </condition>
 
