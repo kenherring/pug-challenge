@@ -15,16 +15,19 @@
     <pathelement path="build" />
   </path>
 
-  <property name="DB_DIR" value="target/db/sp2k" />
+  <condition property="DB_DIR" value="target/db-unix/sp2k" else="target/db/sp2k" >
+    <os family="unix" />
+  </condition>
+
   <property name="tempDir" value="target/temp" />
 
   <target name="create-db">
     <mkdir dir="${DB_DIR}" />
     <mkdir dir="${tempDir}" />
     <echo>DB_DIR=${DB_DIR}</echo>
-    <echo>baseDir=${baseDir}</echo>
+    <echo>baseDir=${basedir}</echo>
     <echo>tempDir=${tempDir}</echo>
-    <PCTCreateBase dbName="sp2k" destDir="${DB_DIR}" schemaFile="schema/schema.df" structFile="schema/schema.st" tempDir="${tempDir}" />
+    <PCTCreateBase dbName="sp2k" destDir="${DB_DIR}" schemaFile="schema/sp2k.df" structFile="schema/sp2k.st" tempDir="${tempDir}" />
 
     <exec executable="chmod">
       <arg value="-R" />
@@ -32,8 +35,7 @@
       <arg value="${DB_DIR}" />
     </exec>
 
-    <exec executable="_proutil" 
-          failonerror="true">
+    <exec executable="_proutil" failonerror="true">
       <arg value="${DB_DIR}/sp2k.db" />
       <arg value="-C" />
       <arg value="truncate" />
@@ -47,7 +49,7 @@
       <fileset dir="src/main" includes="**/*.cls,**/*.p" />
       <fileset dir="src/test" includes="**/*.cls,**/*.p" />
       <propath refid="propath" />
-      <DBConnection dbName="sp2k" dbDir="target/db/sp2k" readOnly="true" />
+      <DBConnection dbName="sp2k" dbDir="${DB_DIR}" readOnly="true" />
     </PCTCompile>
   </target>
 
@@ -56,7 +58,7 @@
   <target name="test-all" depends="compile" unless="file">
     <mkdir dir="target" />
     <ABLUnit writeLog="true" destDir="target" haltOnFailure="true">
-      <fileset dir="test" includes="**/*.p,**/*.cls" />
+      <fileset dir="src/test" includes="**/*.p,**/*.cls" />
       <propath refid="propath" />
     </ABLUnit>
   </target>
@@ -64,7 +66,7 @@
     <target name="test-file" depends="compile" if="file">
     <mkdir dir="target" />
     <ABLUnit writeLog="true" destDir="target" haltOnFailure="true">
-      <fileset dir="test" includes="**/*.p,**/*.cls" />
+      <fileset dir="src/test" includes="**/*.p,**/*.cls" />
       <propath refid="propath-ablunit" />
     </ABLUnit>
   </target>
