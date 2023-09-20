@@ -23,7 +23,8 @@ jobs:
           command: |
             set -x
             mkdir -p secrets
-            .circleci/hex2bin.sh \<<< "$(tr ' ' '\n' \<<< "$PROGRESS_CFG_HEX")" > secrets/progress.cfg
+            .circleci/hex2bin.sh \<<< "$(tr ' ' '\n' \<<< "$PROGRESS_CFG_HEX")" > /psc/dlc/progress.cfg
+            
             ant compile
       - run: ant test
       - persist_to_workspace:
