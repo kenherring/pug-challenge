@@ -3,7 +3,7 @@ version: "3.2"
 services:
   oedb-compile:
     image: kherring/oedb:latest
-    container_name: oedb
+    container_name: oedb-compile
     environment:
       - DB_CREATE_METHOD=none
       - DB_DIR=sp2k
@@ -11,18 +11,17 @@ services:
       - DB_BROKER_PORT=2500
       - DB_MINPORT=2600
       - DB_MAXPORT=2610
+      - PROGRESS_CFG_HEX=${PROGRESS_CFG_HEX}
     network_mode: host
-    # networks:
-    #   - host_pug
-    # ports:
-    #   - '0.0.0.0:2500:2500'
     volumes:
       - ./:/home/pscadmin/
     entrypoint: .docker/compile.sh
     secrets:
       - PROGRESS_CFG
+    profiles:
+      - compile
 
-  oedb-rundb:
+  oedb:
     image: kherring/oedb:latest
     container_name: oedb
     environment:
