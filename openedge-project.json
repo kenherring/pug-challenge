@@ -9,13 +9,12 @@
     "numThreads": 1,
     "dbConnections": [],
     "buildPath": [
-        { "type": "source", "path": "src", "includes": "**/*.cls,**/*.p" },
-        { "type": "source", "path": "test", "includes": "**/*.cls,**/*.p" },
-        { "type": "propath", "path": "target/rcode" },
-        { "type": "propath", "path": "${DLC}/tty/OpenEdge.Core.pl", "documentation": "gendocs/corelib.json" }
+        { "type": "source", "path": "src/main", "includes": "**/*.cls,**/*.p" },
+        { "type": "source", "path": "src/test", "includes": "**/*.cls,**/*.p" },
+        { "type": "propath", "path": "${DLC}/tty/OpenEdge.Core.pl", "documentation": "target/docs/corelib.json" }
     ],
     "procedures": [
-      { "name": "dev/update_schema.sh", "mode": "once" }
+      { "mode": "super", "name": "src/connect.p" }
     ],
     "profiles": [
       {
@@ -27,7 +26,7 @@
               "name": "sp2k",
               "connect": "-db target/db/sp2k/sp2k.db -RO",
               "aliases": [ "sports2000" ],
-              "dumpFile": "schema/schema.df"
+              "dumpFile": "schema/sp2k.df"
             }
           ]
         }
@@ -41,7 +40,7 @@
               "name": "sp2k",
               "connect": "-db target/db/sp2k/sp2k.db -S localhost -P 8510",
               "aliases": [ "sports2000" ],
-              "dumpFile": "schema/schema.df" }
+              "dumpFile": "schema/sp2k.df" }
           ]
         }
       },

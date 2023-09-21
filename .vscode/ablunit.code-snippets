@@ -1,5 +1,9 @@
 // in file 'Code/User/snippets/javascript.json'
 {
+  "using OpenEdge.Core.Assert.": {
+    "prefix": "using OpenEdge.Core.Assert.",
+    "body": "using OpenEdge.Core.Assert."
+  },
   "@Test2": {
     "prefix": ["for", "for-const"],
     "body": ["for (const ${2:element} of ${1:array}) {", "\t$0", "}"],
@@ -11,7 +15,7 @@
     "body": [
       "@Test."
       "method public void testMethod () :"
-      "  Assert::equals (expected, actual)."
+      "  Assert:equals (expected, actual)."
       "end method."
     ]
     "description": "Identifies that a method or a procedure is a test method or procedure.",
@@ -21,10 +25,10 @@
     "body": [
       "@Test (exepcted=\"ExceptionType\")."
       "method public void testMethod () :"
-      "  some.namespace.class:MethodName("args"). //Throws ExceptionType"
+      "  some.namespace.class:MethodName(\"args\"). //Throws ExceptionType"
       "end method."
     ],
-    "description": "(expected="ExceptionType")	Fails the method if the method does not throw the exception mentioned in the expected attribute.",
+    "description": "(expected=\"ExceptionType\")	Fails the method if the method does not throw the exception mentioned in the expected attribute.",
   },
   "@Setup": {
     "prefix": "@Setup. method public void doSetup()",

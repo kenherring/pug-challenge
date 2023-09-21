@@ -12,7 +12,9 @@
   </path>
 
   <path id="propath-ablunit">
-    <pathelement path="build" />
+    <!-- <pathelement path="target/rcode" /> --> <!-- not with a classroom license! -->
+    <pathelement path="target/test" />
+    <pathelement path="target/main" />
   </path>
 
   <condition property="DB_DIR" value="/psc/wrk/sp2k" else="target/db/sp2k" >
@@ -45,7 +47,7 @@
 
   <target name="compile">
     <echo message="Hello World"/> 
-    <PCTCompile destDir="build" keepXref="true" xmlXref="true" forceCompile="true">
+    <PCTCompile destDir="target/rcode" keepXref="true" xmlXref="true" forceCompile="true">
       <fileset dir="src/main" includes="**/*.cls,**/*.p" />
       <fileset dir="src/test" includes="**/*.cls,**/*.p" />
       <propath refid="propath" />
@@ -60,14 +62,17 @@
     <ABLUnit writeLog="true" destDir="target" haltOnFailure="true">
       <fileset dir="src/test" includes="**/*.p,**/*.cls" />
       <propath refid="propath" />
+      <DBConnection dbName="sp2k" dbDir="${DB_DIR}" readOnly="true" />
     </ABLUnit>
   </target>
 
     <target name="test-file" depends="compile" if="file">
     <mkdir dir="target" />
+    <echo>file=${file}</echo>
     <ABLUnit writeLog="true" destDir="target" haltOnFailure="true">
-      <fileset dir="src/test" includes="**/*.p,**/*.cls" />
+      <fileset dir="src/test" includes="**/${file}" />
       <propath refid="propath-ablunit" />
+      <DBConnection dbName="sp2k" dbDir="${DB_DIR}" readOnly="true" />
     </ABLUnit>
   </target>
 

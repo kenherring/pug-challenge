@@ -2,6 +2,8 @@
   "abl.buildMode": 1,
   "files.exclude": {
     ".DataDigger": true,
+    ".scannerwork": true,
+    ".sonarlint": true
   },
   "editor.suggest.filterGraceful": true,
   "editor.wordBasedSuggestions": false,
@@ -21,7 +23,11 @@
   "terminal.integrated.env.windows": {
     "DLC": "C:/Progress/OpenEdge",
     "ANT_HOME": "${env:DLC}/ant",
-    "PATH": "${env:PATH}:${env:DLC}/ant/bin"
+    "PATH": "${env:PATH}:${env:DLC}/ant/bin:/c/Users/kherring/maven/apache-maven-4.0.0-alpha-7/bin"
   },
-  "task.autoDetect": "off"
+  "task.autoDetect": "off",
+  "sonarlint.connectedMode.project": {
+    "connectionId": "http-localhost-9000",
+    "projectKey": "ken.herring.pug.challenge:pug-challenge"
+  }
 }
