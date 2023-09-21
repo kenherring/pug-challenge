@@ -11,7 +11,6 @@ class order.CreateOrderTest use-widget-pool :
 
   @Test.
   method public void testMethod () :
-    define variable expected as logical no-undo.
     define variable oNum as integer no-undo.
     oNum = CO:CreateHeader(1).
     CO:AddOrderLine(oNum, 1, 1).

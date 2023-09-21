@@ -12,8 +12,6 @@
     "source=/c/Progress/OpenEdge/progress.cfg,target=/psc/dlc/progress.cfg,type=bind,consistency=cached"
   ],
 
-  "postCreateCommand": "yum -y install git",
-
   "customizations": {
     "vscode": {
       "settings": {
@@ -36,7 +34,7 @@
 
   "containerEnv": {
     "DLC": "/psc/wrk"
-  }
+  },
 
   // "forwardPorts": [3000],
 
@@ -47,7 +45,7 @@
   //   }
   // },
 
-  // "postCreateCommand": "yarn install"
+  "postCreateCommand": "yum -y install git"
 
   // "remoteUser": "root"
 }

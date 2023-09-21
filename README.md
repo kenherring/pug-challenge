@@ -20,6 +20,27 @@ This will scan locally if you are running a docker container at https://localhos
 mvn sonar:sonar
 ```
 
+## Docker
+
+### Build/Test Container
+
+The build pipeline container can be built with the following command.
+
+```bash
+.docker/docker-build.sh
+```
+
+### Dev Container
+
+To launch with a dev container you can either build the image with the prior command, or pull the image with the next command.
+
+```bash
+docker pull kherring/oedb:latest
+```
+
+Then launch as a dev container with the `Dev Containers: Reopen in Container` VSCode command.
+
+
 ## Other Repo Information
 
 ### Tools
