@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<project name="gendocs" default="gendocs">
+<project name="gendocs" default="gendocs" basedir="../target/docs">
 
   <property name="DLC" value="C:/Progress/OpenEdge" />
 
@@ -34,7 +34,7 @@
 
   <!-- <target name="compile-libs" depends="extract"> -->
   <target name="compile-libs" depends="extract-libs">
-    <PCTCompile destDir="build">
+    <PCTCompile destDir="build" failOnError="false">
       <!-- <fileset dir="businesscomponents" includes="**/*.cls" /> -->
       <fileset dir="src/corelib" includes="**/*.cls" />
       <fileset dir="build/corelib" includes="**/*.cls" />
@@ -57,11 +57,11 @@
     
     <JsonDocumentation buildDir="build" destFile="seclib.json" encoding="iso-8859-1" indent="true">
       <fileset dir="seclib" includes="**/*.cls" />
-      <propath refid="pp" />
+      <propath refid="propath" />
     </JsonDocumentation>
     <JsonDocumentation buildDir="build" destFile="dataAdmin.json" encoding="iso-8859-1" indent="true">
       <fileset dir="." includes="OpenEdge/DataAdmin/**/*.cls" />
-      <propath refid="pp" />
+      <propath refid="propath" />
     </JsonDocumentation>
   </target>
 

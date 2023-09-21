@@ -1,10 +1,3 @@
-message 100.
-run test-proc(200).
-message 200.
-return "0".
-
-
-PROCEDURE test-proce :
-  define variable ipInt as integer no-undo.
-  //do some stuff
-END PROCEDURE.
+message 100 num-dbs.
+connect -db target/db/sp2k/sp2k.db -RO.
+message 101 num-dbs.

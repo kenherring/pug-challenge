@@ -28,7 +28,7 @@
       },
       "args": [
         "test",
-        "-Dfile=${relativeFile}"
+        "-Dfile='${fileBasename}'"
       ],
       "group": {
         "kind": "test",
@@ -47,8 +47,7 @@
       },
       "command": "ant",
       "args": [
-        "test",
-        "-Dfile=${relativeFile}"
+        "test"
       ],
       "group": {
         "kind": "test",
@@ -59,9 +58,8 @@
       },
       "problemMatcher": []
     },
-    {
-      "label": "Launch DataDigger (read only schema)",
-      "type": "process",
+    { "label": "Launch DataDigger (read only schema)",
+      "type": "shell",
       "icon": {
         "id": "database",
         "color": "terminal.ansiGreen"
@@ -76,22 +74,20 @@
         "-p",
         ".DataDigger/DataDigger.p",
         "-pf",
-        "schema/schema.pf",
+        "schema/sp2k.pf",
         "-param",
         "'sports2000 (schema db)'"
       ],
-      // "presentation": {
-      //   "echo": true,
-      //   "reveal": "always",
-      //   "focus": false,
-      //   "panel": "shared",
-      //   "showReuseMessage": true,
-      //   "clear": false
-      // },
+      "presentation": {
+        "reveal": "never",
+        "focus": false,
+        "showReuseMessage": false,
+        "clear": true,
+        "close": true,
+      },
       "problemMatcher": []
     },
-    {
-      "label": "Launch DataDigger (docker)",
+    { "label": "Launch DataDigger (docker)",
       "type": "process",
       "icon": {
         "id": "database",
@@ -109,7 +105,7 @@
         "-pf",
         "schema/schema-docker.pf",
         "-param",
-        "'sports2000 (schema db)'"
+        "'sp2k (schema db)'"
       ],
       // "presentation": {
       //   "echo": true,

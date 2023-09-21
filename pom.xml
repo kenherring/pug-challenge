@@ -40,11 +40,11 @@
     <!-- This is the name and version displayed in the SonarCloud UI. -->
     <sonar.projectKey>ken.herring.pug.challenge:pug-challenge</sonar.projectKey>
     <sonar.organization>kenherring</sonar.organization>
-    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     <!-- <sonar.projectName>pug-challenge</sonar.projectName> -->
     <!-- <sonar.organization>kenherring</sonar.organization> -->
     <sonar.projectVersion>2023.09.21</sonar.projectVersion>
 
+    <!-- <sonar.host.url>https://sonarcloud.io</sonar.host.url> -->
     <!-- sonar.host.url=http://localhost:9000 -->
     <sonar.login>admin</sonar.login>
     <sonar.password>admin2</sonar.password>
