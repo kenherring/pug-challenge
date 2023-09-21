@@ -32,9 +32,6 @@ build_docker_image () {
   cp "$DLC/tty/ablunit.pl" .docker/temp/ablunit.pl
   
   env
-  # echo "PROGRAM_FILES=$PROGRAM_FILES"
-
-  # PATH=$PATH:/c/Program\ Files/Docker/Docker/resources/bin
 
   echo "$(tr '\n' ' ' <<< "$PROGRESS_CFG_HEX")"
   PROGRESS_CFG_HEX="$(.circleci/bin2hex.sh < secrets/progress.cfg)"
@@ -43,7 +40,6 @@ build_docker_image () {
 
   docker build -f .docker/Dockerfile --secret id=PROGRESS_CFG,src="$DLC/progress.cfg" . --tag oedb:latest
   docker tag oedb:latest kherring/oedb:latest
-  # rm secrets/progress.cfg
 }
 
 main_block

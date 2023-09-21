@@ -36,6 +36,7 @@ jobs:
       - attach_workspace:
           at: .
       - sonarcloud/scan
+
 workflows:
   say-hello-workflow:
     jobs:

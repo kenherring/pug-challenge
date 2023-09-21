@@ -1,13 +1,10 @@
 #!/bin/bash
 
 main() {
-  echo 300 "DB_CREATE_METHOD=${DB_CREATE_METHOD}"
 	SCRIPTPATH=$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")
-  echo 300 "DB_CREATE_METHOD=${DB_CREATE_METHOD}"
 	# validate OpenEdge variables and java
 	source ${SCRIPTPATH}/validate.sh
   
-  echo 300 "DB_CREATE_METHOD=${DB_CREATE_METHOD}"
 
 	# read common properties required for create and start db
 	source ${SCRIPTPATH}/db.properties

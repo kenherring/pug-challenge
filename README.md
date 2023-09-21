@@ -6,11 +6,15 @@ This repo was put together for a presentation at 2023 PUG Challenge EU.
 
 ### Compile
 
-TBD
+```bash
+ant compile
+```
 
 ### Unit Test (ABLUnit)
 
-TBD
+```bash
+ant test
+```
 
 ### Sonar Scan
 
@@ -61,7 +65,3 @@ Then launch as a dev container with the `Dev Containers: Reopen in Container` VS
   * https://hub.docker.com/r/progresssoftware/prgs-oedb
   * https://hub.docker.com/r/progresssoftware/prgs-pasoe
   * https://docs.progress.com/bundle/pas-for-openedge-docker-containers-122/page/Learn-about-PAS-for-OpenEdge-in-a-Docker-container.html
-
-## About Me
-
-TBD
