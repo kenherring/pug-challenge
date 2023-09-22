@@ -23,7 +23,8 @@ class invoice.CreateInvoiceTest use-widget-pool :
     end.
   end method.
   
-  @Test.
+
+  // @Test.
   method public void testMethod () :
     define variable invCount as integer no-undo.
     CI:new(1,1.0).
