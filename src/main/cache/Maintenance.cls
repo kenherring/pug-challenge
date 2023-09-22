@@ -16,15 +16,8 @@ class cache.Maintenance use-widget-pool :
 
   method static public character GetUserNameFromGUID (ipGuid as character) :
     find first ttUsers no-lock where ttUsers.user-guid = ipGuid no-error.
-    message "maintenance.cls" 100 ipGuid.
-    
-    for each ttUsers no-lock:
-      message "maintenance.cls" 101 ttUsers.user-name ttUsers.user-guid ttUsers.user-login.
-    end.
-    
     if available ttUsers then
       return ttUsers.user-name.
-    message "maintenance.cls" 102.
     return "".
   end method.
 
