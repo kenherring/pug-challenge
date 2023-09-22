@@ -18,12 +18,16 @@ jobs:
       - image: kherring/oedb:latest
     steps:
       - checkout
-      - run: .circleci/hex2bin.sh \<<< "$(tr ' ' '\n' \<<< "$PROGRESS_CFG_HEX")" > /psc/dlc/progress.cfg
+      - run: .base64 --decode <<< "$PROGRESS_CFG_BASE64" > /psc/dlc/progress.cfg
       - run: ant compile
       - run: ant test
       - persist_to_workspace:
           root: .
           paths: [ '.' ]
+      - store_artifacts:
+          path: target/results.xml
+      - store_test_results:
+          path: target/results.xml
   sonar-scan:
     docker:
       - image: cimg/openjdk:11.0.20

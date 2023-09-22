@@ -4,18 +4,10 @@ services:
   oedb-compile:
     image: kherring/oedb:latest
     container_name: oedb-compile
-    environment:
-      - DB_CREATE_METHOD=none
-      - DB_DIR=sp2k
-      - DB_NAME=sp2k
-      - DB_BROKER_PORT=2500
-      - DB_MINPORT=2600
-      - DB_MAXPORT=2610
-      - PROGRESS_CFG_HEX=${PROGRESS_CFG_HEX}
-    network_mode: host
     volumes:
       - ./:/home/pscadmin/project
-    entrypoint: project/.docker/compile.sh
+      - ${DLC}/progress.cfg:/psc/dlc/progress.cfg:ro
+    entrypoint: 'ant compile test'
     secrets:
       - PROGRESS_CFG
     profiles:
@@ -32,10 +24,8 @@ services:
       - DB_MINPORT=2600
       - DB_MAXPORT=2610
     network_mode: host
-    # networks:
-    #   - host_pug
-    # ports:
-    #   - '0.0.0.0:2500:2500'
+    volumes:
+      - ${DLC}/progress.cfg:/psc/dlc/progress.cfg:ro
     secrets:
       - PROGRESS_CFG
     profiles:
@@ -44,9 +34,3 @@ services:
 secrets:
   PROGRESS_CFG:
     file: c:/Progress/OpenEdge/progress.cfg
-
-# networks:
-#   host_pug:
-#     driver: bridge
-#     # driver: host
-#     enable_ipv6: false

@@ -1,17 +1,9 @@
 # CircleCI
 
-## `hex2bin.sh`
+## `progress.cfg`
 
-Convert the CFG file to hex so it can be stored as a string.  This string can then be stored as a private environment variable in CircleCI.
-
-```bash
-bin2hex.sh < $DLC/progress.cfg > $DLC/progress.cfg.hex
-```
-
-## `bin2hex.sh`
-
-Convert a hex value to a binary file.  This is used to convert the output from the above to a `progress.cfg` file at runtime.
+This project requires an environment variable `PROGRESS_CFG_BASE64` containing a base64 encoded license file.
 
 ```bash
-hex2bin.sh < <$(tr ' ' '\n' <<< "$PROGRESS_CFG_HEX") > $DLC/progress.cfg
+base64 "$DLC/progress.cfg"
 ```
