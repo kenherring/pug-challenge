@@ -8,7 +8,7 @@ class order.CreateOrder use-widget-pool :
     create Order.
     Order.CustNum = vCustNum.
     Order.OrderDate = today.
-    log-manager:write-message("created ordernum:" + string(Order.OrderNum)).
+    // log-manager:write-message("created ordernum:" + string(Order.OrderNum)).
     ordNum = Order.OrderNum.
     release Order.
 
@@ -20,7 +20,7 @@ class order.CreateOrder use-widget-pool :
     OrderLine.OrderNum = vOrderNum.
     OrderLine.ItemNum = vItemNum.
     OrderLine.Qty = vQty.
-    log-manager:write-message("added orderline:" + string(OrderLine.OrderNum) + " " + string(OrderLine.LineNum)).
+    // log-manager:write-message("added orderline:" + string(OrderLine.OrderNum) + " " + string(OrderLine.LineNum)).
     release OrderLine.
   end method.
 

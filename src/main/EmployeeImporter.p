@@ -17,7 +17,8 @@ if available Employee then
 if vPersonNum = 123 then
 do:
   //how would a code reviewer know that vPersonNum is outputting PIFI
-  log-manager:write-message("debug vPersonNum=" + string(vPersonNum)).
+  if log-manager:logfile-name <> ? then
+    log-manager:write-message("debug vPersonNum=" + string(vPersonNum)).
 end.
 
 

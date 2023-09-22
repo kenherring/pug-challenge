@@ -1,8 +1,16 @@
 using OpenEdge.Core.Assert.
 
+block-level on error undo, throw.
+
 class cache.MaintenanceTest use-widget-pool inherits cache.Maintenance:
 
-  {cache/cache.i}
+  @Before.
+  method public void beforeMethod () :
+    create ttUsers.
+    ttUsers.user-name = "KenHerring".
+    ttUsers.user-guid = "1234".
+    release ttUsers.
+  end method.
 
   @TearDown.
   method public void tearDownMethod () :
@@ -11,10 +19,6 @@ class cache.MaintenanceTest use-widget-pool inherits cache.Maintenance:
     
     //CABL warning on the next line for unused variable.
     define variable somevar as character no-undo.
-
-    create ttCache.
-    ttCache.cacheid = 1.
-    release ttCache.
   end method.
 
   @Test.

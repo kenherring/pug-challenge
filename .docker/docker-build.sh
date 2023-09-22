@@ -2,44 +2,25 @@
 set -eou pipefail
 
 main_block () {
-  get_progress_cfg
+  copy_deps
   build_docker_image
+  cleanup
   echo "docker build successful!"
   exit 0
 }
 
-get_progress_cfg () {
-  [ -f secrets/progress.cfg ] || return 0
-
-  if ${CIRCLECI:-false} || [ -n "${PROGRESS_CFG_HEX:-}" ]; then
-    PROGRESS_CFG_HEX="$(.circleci/bin2hex.sh < secrets/progress.cfg)"
-  else
-    PROGRESS_CFG=$DLC/progress.cfg
-    [ ! -f "$PROGRESS_CFG" ] && PROGRESS_CFG=/c/Progress/OpenEdge/progress.cfg
-    if [ ! -f "$PROGRESS_CFG" ]; then
-      echo "ERROR: cannot find progress.cfg"
-      exit 1
-    fi
-    PROGRESS_CFG_HEX="$(.circleci/bin2hex.sh < "$PROGRESS_CFG")"
-  fi
-
-  mkdir -p secrets
-  .circleci/hex2bin.sh <<< "$(tr ' ' '\n' <<< "$PROGRESS_CFG_HEX")" > secrets/progress.cfg
+copy_deps () {
+  mkdir -p .docker/temp
+  cp "$DLC/tty/ablunit.pl" .docker/temp/ablunit.pl
 }
 
 build_docker_image () {
-  mkdir -p .docker/temp
-  cp "$DLC/tty/ablunit.pl" .docker/temp/ablunit.pl
-  
-  env
-
-  echo "$(tr '\n' ' ' <<< "$PROGRESS_CFG_HEX")"
-  PROGRESS_CFG_HEX="$(.circleci/bin2hex.sh < secrets/progress.cfg)"
-  export PROGRESS_CFG_HEX
-  echo "$(tr '\n' ' ' <<< "$PROGRESS_CFG_HEX")"
-
   docker build -f .docker/Dockerfile --secret id=PROGRESS_CFG,src="$DLC/progress.cfg" . --tag oedb:latest
   docker tag oedb:latest kherring/oedb:latest
+}
+
+cleanup () {
+  rm -rf .docker/temp
 }
 
 main_block
