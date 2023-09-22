@@ -12,13 +12,12 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
-  # build-container:
   compile-and-test:
     docker:
       - image: kherring/oedb:latest
     steps:
       - checkout
-      - run: .base64 --decode \<<< "$PROGRESS_CFG_BASE64" > /psc/dlc/progress.cfg
+      - run: base64 --decode \<<< "$PROGRESS_CFG_BASE64" > /psc/dlc/progress.cfg
       - run: ant compile
       - run: ant test
       - persist_to_workspace:
@@ -37,7 +36,7 @@ jobs:
       - sonarcloud/scan
 
 workflows:
-  say-hello-workflow:
+  build-pipeline:
     jobs:
       - say-hello
       - compile-and-test
