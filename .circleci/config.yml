@@ -18,13 +18,8 @@ jobs:
       - image: kherring/oedb:latest
     steps:
       - checkout
-      - run:
-          name: ant compile
-          command: |
-            set -x
-            .circleci/hex2bin.sh \<<< "$(tr ' ' '\n' \<<< "$PROGRESS_CFG_HEX")" > /psc/dlc/progress.cfg
-            
-            ant compile
+      - run: .circleci/hex2bin.sh \<<< "$(tr ' ' '\n' \<<< "$PROGRESS_CFG_HEX")" > /psc/dlc/progress.cfg
+      - run: ant compile
       - run: ant test
       - persist_to_workspace:
           root: .
