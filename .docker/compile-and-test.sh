@@ -6,7 +6,7 @@ export PROGRESS_CFG_BASE64
 
 #shellcheck disable=SC2016
 COMMAND='base64 --decode <<< "$PROGRESS_CFG_BASE64" > "$DLC/progress.cfg" &&
-         ant compile test'
+         ant test'
 
 PDIR="$(cmd //c cd || pwd)"
 

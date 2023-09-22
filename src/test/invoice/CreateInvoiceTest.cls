@@ -9,11 +9,13 @@ class invoice.CreateInvoiceTest use-widget-pool :
     CI = new invoice.CreateInvoice().
   end constructor.
 
+
   @Before.
   method public void beforeMethod () :
-    message 100 num-dbs.
-    run connect.p.
-    message 101 num-dbs.
+    disable triggers for load of Invoice.
+    for each Invoice exclusive-lock:
+      delete Invoice.
+    end.
   end method.
 
   @TearDown.
@@ -22,9 +24,8 @@ class invoice.CreateInvoiceTest use-widget-pool :
       delete Invoice.
     end.
   end method.
-  
 
-  // @Test.
+  @Test.
   method public void testMethod () :
     define variable invCount as integer no-undo.
     CI:new(1,1.0).

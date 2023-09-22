@@ -1,4 +1,6 @@
+FROM progresssoftware/prgs-pasoe:12.2.12 AS pasoe
 FROM progresssoftware/prgs-oedb:12.2.12_ent
+COPY --from=pasoe /psc/dlc/bin /psc/dlc/bin
 LABEL maintainer="kennethherring@gmail.com"
 
 USER root
@@ -18,34 +20,21 @@ ENV PATH=$JAVA_HOME/bin:$PATH:$ANT_HOME/bin
 ENV DOCKER=true
 ENV DB_CREATE_METHOD=none
 ENV DB_NAME=sp2k
-# RUN ant -version && \
-#     echo JAVA_HOME="'$JAVA_HOME'" && \
-#     exit 1
 
 COPY src src
 COPY schema schema
 COPY build.xml build.xml
-COPY .docker/db_test.p db_test.p
 COPY .docker/deploy/scripts/ /deploy/scripts/
 COPY .docker/temp/ablunit.pl /psc/dlc/tty/ablunit.pl
 
-RUN echo "JAVA_HOME"
-
 RUN echo JAVA_HOME="'$JAVA_HOME'" && \
-    ant -version && \
-    which ant && \
-    whereis ant && \
-    pwd && \
-    echo "HOME=$HOME" && \
-    whoami
+    ant -version
 RUN pwd && \
     ls -al && \
     mkdir -p target/temp /psc/wrk/sp2k && \
     chmod -R 777 /psc/wrk
 
 RUN --mount=type=secret,id=PROGRESS_CFG,uid=1000,gid=1000 \
-    whoami && \
-    ls -al /run/secrets && \
     rm /psc/dlc/progress.cfg && \
     cp /run/secrets/PROGRESS_CFG "$DLC/progress.cfg" && \
     ant create-db -DDB_DIR=/psc/wrk/sp2k && \
@@ -53,6 +42,7 @@ RUN --mount=type=secret,id=PROGRESS_CFG,uid=1000,gid=1000 \
     if [ -f /psc/wrk/sp2k/sp2k.prostrct.log ]; then cat /psc/wrk/sp2k/sp2k.prostrct.log; fi && \
     [ -f /psc/wrk/sp2k/sp2k.db ] || exit 1
 
+#TODO after build validation?  No need for a step here.
 RUN [ ! -f "$DLC/progress.cfg" ] && exit 0; \
     echo "ERROR: the '$DLC/progress.cfg' file should not exist!"; \
     cat "$DLC/progress.cfg"; \

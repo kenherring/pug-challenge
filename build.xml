@@ -11,12 +11,6 @@
     <pathelement location="${env.DLC}/tty/OpenEdge.Core.pl" />
   </path>
 
-  <path id="propath-ablunit">
-    <!-- <pathelement path="target/rcode" /> --> <!-- not with a classroom license! -->
-    <pathelement path="target/test" />
-    <pathelement path="target/main" />
-  </path>
-
   <condition property="DB_DIR" value="/psc/wrk/sp2k" else="target/db/sp2k" >
     <os family="unix" />
   </condition>
@@ -55,25 +49,15 @@
     </PCTCompile>
   </target>
 
-  <target name="test" depends="test-all,test-file" />
-
-  <target name="test-all" depends="compile" unless="file">
-    <mkdir dir="target" />
-    <ABLUnit writeLog="true" destDir="target" haltOnFailure="true">
+  <target name="test" depends="compile">
+    <condition property="fileset.includes" value="${file}" else="**/*Test.cls,**/*Test.p" >
+      <isset property="file" />
+    </condition>
+    <mkdir dir="${tempDir}" />
+    <ABLUnit writeLog="true" destDir="target" failOnError="true" haltOnFailure="true" tempDir="${tempDir}">
       <fileset dir="src/test" includes="**/*.p,**/*.cls" />
       <propath refid="propath" />
-      <DBConnection dbName="sp2k" dbDir="${DB_DIR}" readOnly="true" />
-      <Profiler enabled="true" outputDir="target/profiler" coverage="true" />
-    </ABLUnit>
-  </target>
-
-    <target name="test-file" depends="compile" if="file">
-    <mkdir dir="target" />
-    <echo>file=${file}</echo>
-    <ABLUnit writeLog="true" destDir="target" haltOnFailure="true">
-      <fileset dir="src/test" includes="**/${file}" />
-      <propath refid="propath-ablunit" />
-      <DBConnection dbName="sp2k" dbDir="${DB_DIR}" readOnly="true" />
+      <DBConnection dbName="sp2k" dbDir="${DB_DIR}" singleUser="true" />
       <Profiler enabled="true" outputDir="target/profiler" coverage="true" />
     </ABLUnit>
   </target>

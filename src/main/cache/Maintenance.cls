@@ -1,7 +1,7 @@
 
 class cache.Maintenance use-widget-pool :
 
-  define private static temp-table ttUsers no-undo
+  define protected static temp-table ttUsers no-undo
     field user-guid as character
     field user-login as character
     field user-name as character
@@ -16,22 +16,23 @@ class cache.Maintenance use-widget-pool :
 
   method static public character GetUserNameFromGUID (ipGuid as character) :
     find first ttUsers no-lock where ttUsers.user-guid = ipGuid no-error.
-    if not available ttUsers then
-    do:
-      create ttUsers.
-      assign ttUsers.user-guid = ipGuid.
+    message "maintenance.cls" 100 ipGuid.
+    
+    for each ttUsers no-lock:
+      message "maintenance.cls" 101 ttUsers.user-name ttUsers.user-guid ttUsers.user-login.
     end.
-    return ttUsers.user-name.
+    
+    if available ttUsers then
+      return ttUsers.user-name.
+    message "maintenance.cls" 102.
+    return "".
   end method.
 
   method static public character GetUserLoginFromGUID (ipGuid as character) :
     find first ttUsers no-lock where ttUsers.user-guid = ipGuid no-error.
-    if not available ttUsers then
-    do:
-      create ttUsers.
-      assign ttUsers.user-guid = ipGuid.
-    end.
-    return ttUsers.user-name.
+    if available ttUsers then
+      return ttUsers.user-login.
+    return "".
   end method.
 
   method static protected void resetCache () :

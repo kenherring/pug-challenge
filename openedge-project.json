@@ -5,7 +5,7 @@
     "version": "12.2",
     "buildDirectory": "target/rcode",
     "graphicalMode": false,
-    "extraParameters": "-T target/temp",
+    "extraParameters": "-T target/temp -undothrow 2",
     "numThreads": 1,
     "dbConnections": [],
     "buildPath": [
@@ -13,9 +13,7 @@
         { "type": "source", "path": "src/test", "includes": "**/*.cls,**/*.p" },
         { "type": "propath", "path": "${DLC}/tty/OpenEdge.Core.pl", "documentation": "target/docs/corelib.json" }
     ],
-    "procedures": [
-      { "mode": "super", "name": "src/connect.p" }
-    ],
+    "procedures": [],
     "profiles": [
       {
         "name": "schema dbs (./target/db/)", 
@@ -24,7 +22,7 @@
           "dbConnections": [
             {
               "name": "sp2k",
-              "connect": "-db target/db/sp2k/sp2k.db -RO",
+              "connect": "-db target/db/sp2k/sp2k.db -1",
               "aliases": [ "sports2000" ],
               "dumpFile": "schema/sp2k.df"
             }
@@ -38,7 +36,7 @@
           "dbConnections": [
             {
               "name": "sp2k",
-              "connect": "-db target/db/sp2k/sp2k.db -S localhost -P 8510",
+              "connect": "-db target/db/sp2k/sp2k.db -H localhost -P 2500",
               "aliases": [ "sports2000" ],
               "dumpFile": "schema/sp2k.df" }
           ]

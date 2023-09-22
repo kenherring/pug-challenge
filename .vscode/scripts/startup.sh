@@ -1,9 +1,10 @@
 #!/bin/bash
 
 main_block () {
-  mkdir -p target/temp
+  mkdir -p target/docs target/temp
   pull_ant_dependencies
   create_db
+  create_corelib_docs
   welcome_message
 }
 
@@ -20,12 +21,17 @@ create_db () {
   fi
 }
 
+create_corelib_docs () {
+  ant -f .tools/gendocs.xml
+}
+
 # pull_docker () {
 #   docker pull progresssoftware/prgs-oedb:12.2.12_ent
 #   docker pull progresssoftware/prgs-pasoe:12.2.12
 # }
 
 welcome_message () {
+  clear
   echo_green "Welcome to VSCode!"
   echo_blue "\nThis project was created by @kenherring for the 2023 PUG Challenge EU"
 

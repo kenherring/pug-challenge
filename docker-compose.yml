@@ -22,8 +22,11 @@ services:
       - DB_NAME=sp2k
       - DB_BROKER_PORT=2500
       - DB_MINPORT=2600
-      - DB_MAXPORT=2610
-    network_mode: host
+      - DB_MAXPORT=2699
+    # network_mode: host
+    ports:
+      - '127.0.0.1:2500:3500'
+      - '127.0.0.1:2600-2699:3600-3699'
     volumes:
       - ${DLC}/progress.cfg:/psc/dlc/progress.cfg:ro
     secrets:

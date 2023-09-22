@@ -28,7 +28,7 @@
       },
       "args": [
         "test",
-        "-Dfile='${fileBasename}'"
+        "-Dfile='${fileBasenameNoExtension}'"
       ],
       "group": {
         "kind": "test"

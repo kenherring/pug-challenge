@@ -7,6 +7,7 @@ class invoice.CreateInvoice use-widget-pool :
     create Invoice.
     Invoice.CustNum = vCustNum.
     Invoice.Amount = vAmount.
+    Invoice.Adjustment = vAmount.
     Invoice.InvoiceDate = today.
     Invoice.InvoiceNum = next-value(NextInvNum).
     release Invoice.
@@ -30,6 +31,8 @@ class invoice.CreateInvoice use-widget-pool :
     if available Invoice then
     do:
       Invoice.Amount = vAmount.
+      Invoice.Adjustment = vAmount.
+      release Invoice.
       return true.
     end.
     return false.
