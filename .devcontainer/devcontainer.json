@@ -1,18 +1,11 @@
-//devcontainer.json
 {
   "name": "OE_12.2",
 
-  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
   "image": "kherring/oedb:latest",
-
-  // Features to add to the dev container. More info: https://containers.dev/features.
-  // "features": {},
 
   "mounts": [
     "source=/c/Progress/OpenEdge/progress.cfg,target=/psc/dlc/progress.cfg,type=bind,consistency=cached"
   ],
-
-  "postCreateCommand": "yum -y install git",
 
   "customizations": {
     "vscode": {
@@ -32,22 +25,11 @@
     }
   },
 
-  "remoteUser": "root",
-
   "containerEnv": {
     "DLC": "/psc/wrk"
-  }
+  },
 
-  // "forwardPorts": [3000],
+  "postCreateCommand": "yum -y install git",
 
-  // "portsAttributes": {
-  //   "3000": {
-  //     "label": "Hello Remote World",
-  //     "onAutoForward": "notify"
-  //   }
-  // },
-
-  // "postCreateCommand": "yarn install"
-
-  // "remoteUser": "root"
+  "remoteUser": "root"
 }

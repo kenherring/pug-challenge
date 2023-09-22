@@ -31,8 +31,7 @@
         "-Dfile='${fileBasename}'"
       ],
       "group": {
-        "kind": "test",
-        "isDefault": true
+        "kind": "test"
       },
       "presentation": {
         "reveal": "always"

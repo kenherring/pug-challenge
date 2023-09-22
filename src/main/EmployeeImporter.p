@@ -4,7 +4,7 @@ define variable vPersonNum as integer no-undo.
 
 find first Employee no-lock no-error.
 if available Employee then
-  assign vPersonNum = Employee.EmpNum.
+  assign vPersonNum = Employee.EmpNum. //Employee.EmpNum is PIFI
 
 // imagine some 1000 lines of code here...
 
@@ -16,7 +16,7 @@ if available Employee then
 
 if vPersonNum = 123 then
 do:
-  //special logic
+  //how would a code reviewer know that vPersonNum is outputting PIFI
   log-manager:write-message("debug vPersonNum=" + string(vPersonNum)).
 end.
 

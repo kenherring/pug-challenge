@@ -6,11 +6,15 @@ This repo was put together for a presentation at 2023 PUG Challenge EU.
 
 ### Compile
 
-TBD
+```bash
+ant compile
+```
 
 ### Unit Test (ABLUnit)
 
-TBD
+```bash
+ant test
+```
 
 ### Sonar Scan
 
@@ -19,6 +23,27 @@ This will scan locally if you are running a docker container at https://localhos
 ```bash
 mvn sonar:sonar
 ```
+
+## Docker
+
+### Build/Test Container
+
+The build pipeline container can be built with the following command.
+
+```bash
+.docker/docker-build.sh
+```
+
+### Dev Container
+
+To launch with a dev container you can either build the image with the prior command, or pull the image with the next command.
+
+```bash
+docker pull kherring/oedb:latest
+```
+
+Then launch as a dev container with the `Dev Containers: Reopen in Container` VSCode command.
+
 
 ## Other Repo Information
 
@@ -40,7 +65,3 @@ mvn sonar:sonar
   * https://hub.docker.com/r/progresssoftware/prgs-oedb
   * https://hub.docker.com/r/progresssoftware/prgs-pasoe
   * https://docs.progress.com/bundle/pas-for-openedge-docker-containers-122/page/Learn-about-PAS-for-OpenEdge-in-a-Docker-container.html
-
-## About Me
-
-TBD

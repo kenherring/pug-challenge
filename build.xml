@@ -63,6 +63,7 @@
       <fileset dir="src/test" includes="**/*.p,**/*.cls" />
       <propath refid="propath" />
       <DBConnection dbName="sp2k" dbDir="${DB_DIR}" readOnly="true" />
+      <Profiler enabled="true" outputDir="target/profiler" coverage="true" />
     </ABLUnit>
   </target>
 
@@ -73,6 +74,7 @@
       <fileset dir="src/test" includes="**/${file}" />
       <propath refid="propath-ablunit" />
       <DBConnection dbName="sp2k" dbDir="${DB_DIR}" readOnly="true" />
+      <Profiler enabled="true" outputDir="target/profiler" coverage="true" />
     </ABLUnit>
   </target>
 

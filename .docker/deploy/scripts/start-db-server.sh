@@ -28,9 +28,6 @@ fi
 echo "Database startup parameters: '${DB_PARAMS}'"
 
 echo "Starting the database '${DB_NAME}' (pwd=$(pwd); DB_PARAMS=${DB_PARAMS})))"
-echo 200 "whoami=$(whoami)"
-ls -al /psc/wrk/sp2k
-echo 201 "'proserve ${DB_NAME} ${DB_PARAMS}'"
 proserve ${DB_NAME} ${DB_PARAMS}
 
 echo -e "

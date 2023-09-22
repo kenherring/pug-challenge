@@ -23,4 +23,27 @@ class invoice.CreateInvoice use-widget-pool :
     return false.
   end method.
 
+  //this method updates an invoice with a new amount
+  method public logical update (vInvoiceNum as integer,
+                                vAmount as decimal) :
+    find first Invoice where Invoice.InvoiceNum = vInvoiceNum exclusive-lock no-error.
+    if available Invoice then
+    do:
+      Invoice.Amount = vAmount.
+      return true.
+    end.
+    return false.
+  end method.
+
+  //this method returns the invoice amount
+  method public decimal getAmount (vInvoiceNum as integer) :
+    find first Invoice where Invoice.InvoiceNum = vInvoiceNum exclusive-lock no-error.
+    if available Invoice then
+    do:
+      return Invoice.Amount.
+    end.
+    return 0.
+  end method.
+  
+
 end class.

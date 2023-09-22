@@ -14,18 +14,18 @@ do cnt = 1 to num-dbs:
 
 end.
 
-// for each Employee no-lock:
-//   message Employee.EmpNum.
-//   log-manager:write-message("Debug:" + string(Employee.EmpNum)).
-// end.
+for each Employee no-lock:
+  message Employee.EmpNum.
+  log-manager:write-message("Debug:" + string(Employee.EmpNum)).
+end.
 
-// for each Employee no-lock:
-  //   display Employee.PostalCode.
-  // end.
+for each Employee no-lock:
+    display Employee.PostalCode.
+  end.
   
-  // for each Invoice no-lock:
-    //   display Invoice.CustNum.
-// end.
+  for each Invoice no-lock:
+      display Invoice.CustNum.
+end.
 
 
 message  "DONE".
