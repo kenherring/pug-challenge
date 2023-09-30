@@ -1,9 +1,14 @@
 #!/bin/bash
+set -eou pipefail
+
 # Entry script for base container image
+if [ -n "${PROGRESS_CFG_BASE64:-}" ]; then
+  base64 --decode <<< "$PROGRESS_CFG_BASE64" > "$DLC/progress.cfg"
+fi
 
-base64 --decode <<< "$PROGRESS_CFG_BASE64" > "$DLC/progress.cfg"
-
-chown -R --reference=/psc/dlc pscadmin /psc/wrk
+# chown -R --reference=/psc/dlc pscadmin /psc/wrk
+chmod -R 777 /psc/dlc/bin
+chmod u+s /psc/dlc/bin/_mprosrv
 
 SCRIPTPATH=$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")
 
