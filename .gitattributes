@@ -1,0 +1,5 @@
+# ABL source
+*.cls linguist-language=OpenEdge ABL
+*.w linguist-language=OpenEdge ABL
+*.p linguist-language=OpenEdge ABL
+*.i linguist-language=OpenEdge ABL
