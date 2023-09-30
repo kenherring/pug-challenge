@@ -1,6 +1,11 @@
 # PUG Challenge 2023 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/kenherring/pug-challenge/tree/main.svg?style=svg&circle-token=83b51698a6242b3f079aad6c2a78500eff4e4483)](https://dl.circleci.com/status-badge/redirect/gh/kenherring/pug-challenge/tree/main)
 
-This repo was put together for a presentation at 2023 PUG Challenge EU.
+This repo was put together for presentations at the [PUG Challenge EU](https://pugchallenge.eu/) 2023.
+
+See the slide decks for more information:
+
+* [VSCode (.pptx)](docs/2023-09-21_VSCode.pptx)
+* [OE Build Pipelines w/ Docker (.pptx)](docs/2023-09-22_OE-Build-Pipelines-w-Docker.pptx)
 
 ## Using this Repo
 
