@@ -16,4 +16,5 @@ progress*.cfg
 ~*
 *.e
 *.hex
+*.lg
 *.log

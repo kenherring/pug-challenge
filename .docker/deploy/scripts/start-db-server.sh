@@ -63,6 +63,9 @@ then
   { echo "ERROR: Failed to start database server!. Exiting. \($status\)"; cat ${DB_DIR}/${DB_NAME} exit $status; }
 fi
 
+# test the DB connection from within the container
+_progres -b -p /home/pscadmin/src/main/db_test.p
+
 shutdown_gracefully() {
   echo "Shutdown the database '${DB_NAME}'"
   
