@@ -1,7 +1,22 @@
+version: "3.2"
+
 services:
   oedb:
-    build:
-      context: .
-      dockerfile: .docker/Dockerfile
-    image: oedb
-    entrypoint: .docker/entrypoint.sh
+    image: oedb:latest
+    container_name: oedb
+    environment:
+      - DB_CREATE_METHOD=none
+      - DB_DIR=sp2k
+      - DB_NAME=sp2k
+      - DB_BROKER_PORT=2000
+      - DB_MINPORT=0
+      - DB_MAXPORT=0
+    # network_mode: host
+    # ports:
+    #   - '0.0.0.0:2000:2000'
+    secrets:
+      - PROGRESS_CFG
+
+secrets:
+  PROGRESS_CFG:
+    file: secrets/progress.cfg

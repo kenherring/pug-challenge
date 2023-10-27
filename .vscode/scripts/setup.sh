@@ -1,23 +1,41 @@
 #!/bin/bash
 
 main_block () {
+  mkdir -p target/temp
   pull_ant_dependencies
+  create_db
   welcome_message
 }
 
 pull_ant_dependencies () {
-  mkdir -p ~/.ant/lib
-  curl -s -L -o ~/.ant/lib/PCT.jar https://github.com/Riverside-Software/pct/releases/download/v226/PCT.jar
+  if [ ! -f ~/.ant/lib/PCT.jar ]; then
+    mkdir -p ~/.ant/lib
+    curl -s -L -o ~/.ant/lib/PCT.jar https://github.com/Riverside-Software/pct/releases/download/v226/PCT.jar
+  fi
 }
 
-pull_docker () {
-  docker pull progresssoftware/prgs-oedb:12.2.12_ent
-  docker pull progresssoftware/prgs-pasoe:12.2.12
+create_db () {
+  if [ ! -f target/db/sp2k/sp2k.db ]; then
+    ant create-db
+  fi
 }
+
+# pull_docker () {
+#   docker pull progresssoftware/prgs-oedb:12.2.12_ent
+#   docker pull progresssoftware/prgs-pasoe:12.2.12
+# }
 
 welcome_message () {
   echo_green "Welcome to VSCode!"
-  echo_blue "This project was created for the 2023 PUG Challenge (EU)"
+  echo_blue "\nThis project was created by @kenherring for the 2023 PUG Challenge (EU)"
+  
+  echo -e "\n * (TODO session 1)"
+  echo " * (TODO session 2)"
+  echo " * (TODO session 3)"
+
+  echo -e "\nFind me on:"
+  echo    " * GitHub:   https://github.com/kenherring"
+  echo    " * LinkedIn: https://www.linkedin.com/in/ken-herring-b55b5287/"
   exit 0
 }
 

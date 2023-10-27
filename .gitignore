@@ -1,5 +1,13 @@
 .builder/
+.docker/deploy/scripts/scripts/
 build/
 gendocs/
 !gendocs/build.xml
+secrets/
 target/
+
+.vscode/profile.json
+progress.cfg
+
+*.e
+*.log

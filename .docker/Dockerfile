@@ -1,23 +1,72 @@
 FROM progresssoftware/prgs-oedb:12.2.12_ent
 
 USER root
-RUN yum -y upgrade && \
+# WORKDIR /root
+RUN --mount=type=cache,target=/var/cache/yum \
+    yum -y upgrade && \
     yum -y install java-11-openjdk.x86_64 && \
-    yum -y install ant
-WORKDIR /root/pscadmin
-
-
-ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-11.0.20.0.8-1.el7_9.x86_64/
-ENV PATH=$PATH:/usr/lib/jvm/java-11-openjdk-11.0.20.0.8-1.el7_9.x86_64/
+    yum -y install ant which where
+RUN JAVA_DIR=/usr/lib/jvm/jre-11-openjdk/ && \
+    ln -s $JAVA_DIR /usr/java
+RUN curl -v -L https://github.com/Riverside-Software/pct/releases/download/v226/PCT.jar -o /usr/share/ant/lib/PCT.jar
 
 USER pscadmin
 WORKDIR /home/pscadmin
+ENV JAVA_HOME=/usr/java
+ENV ANT_HOME=/usr/share/ant
+ENV PATH=$JAVA_HOME/bin:$PATH:$ANT_HOME/bin
+ENV DOCKER=true
+ENV DB_CREATE_METHOD=none
+ENV DB_NAME=sp2k
+# RUN ant -version && \
+#     echo JAVA_HOME="'$JAVA_HOME'" && \
+#     exit 1
+
 COPY src src
-COPY schema.df schema.df
+COPY schema schema
 COPY build.xml build.xml
-RUN mkdir -p ~/.ant/lib
-RUN curl -v https://github.com/Riverside-Software/pct/releases/download/v226/PCT.jar -o /home/pscadmin/.ant/lib/PCT.jar && \
-    ls -al /home/pscadmin/.ant/lib && \
-    exit 1
-RUN ls -al /home/pscadmin/.ant/lib && exit 1
-RUN ant -lib /home/pscadmin/.ant/lib/PCT.jar create-dbs
+COPY .docker/db_test.p db_test.p
+COPY .docker/deploy/scripts/ /deploy/scripts/
+COPY progress.cfg /psc/dlc/progress.cfg
+
+ARG PROGRESS_CFG
+# RUN echo "PROGRESS_CFG='$PROGRESS_CFG'"
+# RUN echo "$PROGRESS_CFG" > /psc/dlc/progress.cfg
+# RUN cat /psc/dlc/progress.cfg
+RUN echo "JAVA_HOME"
+
+RUN echo JAVA_HOME="'$JAVA_HOME'" && \
+    ant -version && \
+    which ant && \
+    whereis ant && \
+    pwd && \
+    echo "HOME=$HOME" && \
+    whoami
+RUN pwd && \
+    ls -al && \
+    mkdir -p target/temp /psc/wrk/sp2k && \
+    chmod -R 777 /psc/wrk
+    # chmod -R 777 /root
+# RUN ls -al target/temp && \
+#     touch target/temp/somefile.lg && \
+#     ls -al target/temp  && \
+#     pwd && \
+#     ant create-db -DDB_DIR=/psc/wrk/sp2k
+
+RUN --mount=type=secret,id=PROGRESS_CFG,uid=1000,gid=1000 \
+    whoami && \
+    ls -al /run/secrets && \
+    rm /psc/dlc/progress.cfg && \
+    cp /run/secrets/PROGRESS_CFG "$DLC/progress.cfg" && \
+    ant create-db -DDB_DIR=/psc/wrk/sp2k && \
+    rm "$DLC/progress.cfg" && \
+    echo 100 && \
+    if [ -f /psc/wrk/sp2k/sp2k.prostrct.log ]; then cat /psc/wrk/sp2k/sp2k.prostrct.log; fi && \
+    [ -f /psc/wrk/sp2k/sp2k.db ] || exit 1
+
+## Testing DB Startup
+# RUN --mount=type=secret,id=PROGRESS_CFG,uid=1000,gid=1000 \
+#     cd /psc/wrk/sp2k && \
+#     cp /run/secrets/PROGRESS_CFG "$DLC/progress.cfg" && \
+#     proserve sp2k -S 2000 && \
+#     rm "$DLC/progress.cfg"

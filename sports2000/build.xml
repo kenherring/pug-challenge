@@ -8,8 +8,8 @@
   <target name="create-sports2000">
     <mkdir dir="target/db/sports2000" />
     <sports2000 dbName="sp2k" destDir="target/db/sports2000" dlcHome="${DLC}" />
-    <PCTDumpSchema destFile="schema.df">
-      <DBConnection dbName="target/db/sports2000/sp2k" singleUser="true" />
+    <PCTDumpSchema destFile="schema/schema.df">
+      <DBConnection dbName="target/db/sports2000/sports2000" singleUser="true" />
     </PCTDumpSchema>
   </target>
 
