@@ -1,12 +1,30 @@
 {
-  "abl.buildMode": 1,
+  // "abl.buildMode": 1,
+  "abl.debugAdapterDebug": false,
+  "abl.debugAdapterTrace": false,
+  "abl.langServerDebug": false,
+  "abl.langServerTrace": false,
+  "ablunit.files.include": [
+    "**/*.{cls,p}"
+  ],
+  "ablunit.files.exclude": [
+    ".builder/**",
+    ".pct/**",
+    "target",
+    "**/OpenEdge/**",
+    "**/order/CreateOrderTest.cls",
+    "**/invoice/CreateInvoiceTest.cls"
+  ],
+  "ablunit.discoverFilesOnActivate": true,
+  "ablunit.explorer.classlabel": "class-type-name",
+  "ablunit.importOpenedgeProjectJson": true,
+  "ablunit.notificationsEnabled": true,
   "files.exclude": {
     ".DataDigger": true,
     ".scannerwork": true,
     ".sonarlint": true
   },
   "editor.suggest.filterGraceful": true,
-  "editor.wordBasedSuggestions": false,
   "explorer.copyRelativePathSeparator": "/",
   "git.ignoreSubmodules": true,
   "git.repositoryScanIgnoredFolders": [
@@ -23,11 +41,11 @@
   "terminal.integrated.env.windows": {
     "DLC": "C:/Progress/OpenEdge",
     "ANT_HOME": "${env:DLC}/ant",
-    "PATH": "${env:PATH}:${env:DLC}/ant/bin:/c/Users/kherring/maven/apache-maven-4.0.0-alpha-7/bin"
+    "PATH": "${env:PATH};${env:DLC}/ant/bin;${env:DLC}/bin;C:/Users/kherring/maven/apache-maven-4.0.0-alpha-7/bin"
   },
   "task.autoDetect": "off",
   "sonarlint.connectedMode.project": {
-    "connectionId": "http-localhost-9000",
-    "projectKey": "ken.herring.pug.challenge:pug-challenge"
+    "connectionId": "sonarcloud-kenherring",
+    "projectKey": "kenherring_pug-challenge"
   }
 }

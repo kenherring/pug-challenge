@@ -2,9 +2,9 @@
 
 define variable vPersonNum as integer no-undo.
 
-find first Employee no-lock no-error.
-if available Employee then
-  assign vPersonNum = Employee.EmpNum. //Employee.EmpNum is PIFI
+// find first Employee no-lock no-error.
+// if available Employee then
+//   assign vPersonNum = Employee.EmpNum. //Employee.EmpNum is PIFI
 
 // imagine some 1000 lines of code here...
 
@@ -20,5 +20,3 @@ do:
   if log-manager:logfile-name <> ? then
     log-manager:write-message("debug vPersonNum=" + string(vPersonNum)).
 end.
-
-
