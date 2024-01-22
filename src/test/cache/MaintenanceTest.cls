@@ -16,7 +16,7 @@ class cache.MaintenanceTest use-widget-pool inherits cache.Maintenance:
   method public void tearDownMethod () :
     //after each test.
     resetCache().
-    
+
     //CABL warning on the next line for unused variable.
     define variable somevar as character no-undo.
   end method.

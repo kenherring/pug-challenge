@@ -40,7 +40,7 @@
   </target>
 
   <target name="compile">
-    <echo message="Hello World"/> 
+    <echo message="Hello World"/>
     <PCTCompile destDir="target/rcode" keepXref="true" xmlXref="true" forceCompile="true">
       <fileset dir="src/main" includes="**/*.cls,**/*.p" />
       <fileset dir="src/test" includes="**/*.cls,**/*.p" />
@@ -64,6 +64,17 @@
 
   <target name="deploy">
     <!-- TODO -->
+  </target>
+
+  <target name="create-db-docs">
+    <mkdir dir="doc" />
+    <PCTSchemaDoc file="doc/db.xml">
+      <DBConnection dbName="sp2k" dbDir="${DB_DIR}" singleUser="true" />
+    </PCTSchemaDoc>
+    <xslt in="doc/db.xml" style="doc/SchemaDoc.xsl" out="doc/output.txt">
+      <param name="outputdir" expression="doc/MyDB"/>
+      <param name="dbname" expression="sp2k" />
+    </xslt>
   </target>
 
 </project>

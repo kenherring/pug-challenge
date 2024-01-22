@@ -5,18 +5,22 @@
     "version": "12.2",
     "buildDirectory": "target/rcode",
     "graphicalMode": false,
-    "extraParameters": "-T target/temp -undothrow 2",
+    // "extraParameters": "-T target/temp -undothrow 2",
+    "extraParameters": "-T target/temp",
     "numThreads": 1,
     "dbConnections": [],
     "buildPath": [
         { "type": "source", "path": "src/main", "includes": "**/*.cls,**/*.p" },
         { "type": "source", "path": "src/test", "includes": "**/*.cls,**/*.p" },
-        { "type": "propath", "path": "${DLC}/tty/OpenEdge.Core.pl", "documentation": "target/docs/corelib.json" }
+        { "type": "propath", "path": "${DLC}/tty/OpenEdge.Core.pl" }
+        // { "type": "source", "path": "src/main", "includes": "**/*.cls,**/*.p", "documentation": ".builder/main.json" },
+        // { "type": "source", "path": "src/test", "includes": "**/*.cls,**/*.p", "documentation": ".builder/test.json" },
+        // { "type": "propath", "path": "${DLC}/tty/OpenEdge.Core.pl", "documentation": "target/docs/corelib.json" }
     ],
     "procedures": [],
     "profiles": [
       {
-        "name": "schema dbs (./target/db/)", 
+        "name": "schema dbs (./target/db/)",
         "inherits": "default",
         "value": {
           "dbConnections": [
@@ -46,7 +50,7 @@
         "name": "no database",
         "inherits": "default",
         "value": {
-          "dbConnections": [] 
+          "dbConnections": []
         }
       }
     ]

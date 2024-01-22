@@ -4,6 +4,7 @@
 .scannerwork/
 .sonarlint/
 build/
+doc/MyDB/
 gendocs/
 !gendocs/build.xml
 secrets/
@@ -16,4 +17,10 @@ progress*.cfg
 ~*
 *.e
 *.hex
+*.ini
 *.log
+*.options
+*.out
+ablunit.json
+results.xml
+doc/db.xml

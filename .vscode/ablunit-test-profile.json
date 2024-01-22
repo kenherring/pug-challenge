@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "tempDir": "${workspaceFolder}",
+            "options": {
+                "writeLog": true
+            }
+        }
+    ]
+}
